@@ -1,0 +1,196 @@
+.page-template-scorecard header, .page-template-scorecard footer {
+  display: none;
+}
+.page-template-scorecard #scorecard-section {
+  background: url(/wp-content/plugins/digital-scrorecard/src/images/bg.png);
+  background-size: cover;
+  height: 100vh;
+  padding: 20px;
+}
+.page-template-scorecard #scorecard-section .header-logo {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.page-template-scorecard #scorecard-section .header-logo img {
+  width: 150px;
+}
+.page-template-scorecard #scorecard-section h1 {
+  font-family: "Helvegon Outline", Helvetica, Arial, Lucida, sans-serif;
+  text-transform: uppercase;
+  font-size: 4.8rem !important;
+  color: white !important;
+  text-align: center;
+  text-shadow: 0 0 7px #c402d1, 0 0 10px #c402d1, 0 0 21px #c402d1, 0 0 42px #c402d1, 0 0 82px #c402d1, 0 0 151px #c402d1;
+}
+.page-template-scorecard #scorecard-section h2 {
+  font-family: "Helvegan - Inky", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 2.8rem !important;
+  text-align: center;
+  color: white !important;
+}
+.page-template-scorecard #scorecard-section #scorecard-form {
+  text-align: center;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .tab {
+  display: none;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .tab.two input:not(:last-child) {
+  margin-bottom: 10px;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field {
+  margin: 0 auto;
+  max-width: 270px;
+  padding: 10px 0;
+  position: relative;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field label {
+  color: #B4FEE7;
+  font-size: 1.1rem;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]) {
+  background: #000005;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  min-width: 270px;
+  padding: 10px 20px;
+  text-align: center;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range])::-moz-placeholder {
+  color: white;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range])::placeholder {
+  color: white;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]).invalid {
+  background-color: rgba(255, 0, 0, 0.2196078431);
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select {
+  position: relative;
+  font-family: Arial;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select select.invalid + .select-selected {
+  background-color: rgba(255, 0, 0, 0.2196078431) !important;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select select {
+  display: none;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items div, .page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-selected {
+  color: #ffffff;
+  padding: 10px 20px;
+  border-bottom: 2px solid white;
+  cursor: pointer;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-selected {
+  background: #000005;
+  border: 2px solid white !important;
+  border-radius: 10px;
+  font-size: 1rem;
+  min-width: 270px;
+  text-align: center;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-selected:after {
+  position: absolute;
+  content: "";
+  top: 22px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 11px;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: none;
+  border: 2px solid white !important;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: -2px;
+  background: #000005;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items div:last-child {
+  border: none;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items div:hover, .page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items .same-as-selected {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-hide {
+  display: none;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer .slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #979797;
+  outline: none;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 0 3px #c402d1, 0 0 10px #c402d1, 0 0 21px #c402d1, 0 0 42px #c402d1, 0 0 82px #c402d1, 0 0 151px #c402d1;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer .slider:hover {
+  opacity: 1;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer span#totalNumPlayers {
+  margin-left: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-buttons {
+  margin: 0 auto;
+  max-width: 270px;
+  padding: 10px 0;
+  position: relative;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-buttons button {
+  background-color: #e9a2c0;
+  border-radius: 10px;
+  color: #000005;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Helvegan - Reg", Helvetica, Arial, Lucida, sans-serif !important;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-buttons button#nextBtn {
+  float: right;
+  width: 100%;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-buttons button#prevBtn {
+  float: left;
+  display: none;
+}
