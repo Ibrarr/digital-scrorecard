@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Plugin Name: Digital Scorecard
- * Description: Creates the templates necessary for the digital scrorecards
+ * Plugin Name: Mini-Golf Digital Scorecard
+ * Description: Creates the templates necessary for the digital scorecards
  * Version: 1.0.0
  * Author: Ibrarr Khan
  * License: GPLv2 or later
