@@ -1,6 +1,41 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/accordian.js":
+/*!*****************************!*\
+  !*** ./src/js/accordian.js ***!
+  \*****************************/
+/***/ (() => {
+
+var accordion = document.getElementsByClassName('accordion');
+for (i = 0; i < accordion.length; i++) {
+  accordion[i].addEventListener('click', function () {
+    this.classList.toggle('active');
+  });
+}
+
+// var acc = document.getElementsByClassName("accordion");
+
+// for (let i = 0; i < acc.length; i++) {
+//   acc[i].addEventListener("click", function() {
+//     for (let j = 0; j < acc.length; j++) {
+//     acc[j].classList.remove("active");
+//       if(j!=i){
+//         acc[j].nextElementSibling.style.maxHeight = null;
+//       }
+//     }
+//     this.classList.add("active");
+//     var panel = this.nextElementSibling;
+//     if (panel.style.maxHeight){
+//       panel.style.maxHeight = null;
+//     } else {
+//       panel.style.maxHeight = panel.scrollHeight + "px";
+//     }
+//   });
+// }
+
+/***/ }),
+
 /***/ "./src/js/dropdown.js":
 /*!****************************!*\
   !*** ./src/js/dropdown.js ***!
@@ -106,15 +141,17 @@ function showTab(n) {
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
   //... and fix the Previous/Next buttons:
-  if (n > 0 || n < 4) {
+  if (n === 0 || n === 1 || n === 2) {
     document.getElementById("prevBtn").style.display = "none";
-  } else {
+    document.getElementById("nextBtn").innerHTML = "Let's Golf!";
+  } else if (n > 3) {
     document.getElementById("prevBtn").style.display = "inline";
+    document.getElementById("nextBtn").style.width = "fit-content";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next Hole";
   }
   if (n == x.length - 1) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
-  } else {
-    document.getElementById("nextBtn").innerHTML = "Let's Golf!";
+    document.getElementById("nextBtn").innerHTML = "See Results";
   }
 }
 document.getElementById("nextBtn").addEventListener("click", function () {
@@ -175,6 +212,16 @@ function validateForm() {
   });
   return valid; // return the valid status
 }
+
+/***/ }),
+
+/***/ "./src/js/holes.js":
+/*!*************************!*\
+  !*** ./src/js/holes.js ***!
+  \*************************/
+/***/ (() => {
+
+
 
 /***/ }),
 
@@ -377,6 +424,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/dropdown.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/slider.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/players.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/holes.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/accordian.js")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/css/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	

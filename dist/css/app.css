@@ -2,7 +2,7 @@
   display: none;
 }
 .page-template-scorecard #scorecard-section {
-  background: url(/wp-content/plugins/digital-scrorecard/src/images/bg.png);
+  background: url(/wp-content/plugins/mini-golf-digital-scorecards/src/images/bg.png);
   background-size: cover;
   height: 100vh;
   padding: 20px;
@@ -52,7 +52,7 @@
   margin-bottom: 10px;
   font-weight: bold;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]) {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox]) {
   background: #000005;
   border: 2px solid white;
   border-radius: 10px;
@@ -62,13 +62,13 @@
   padding: 10px 20px;
   text-align: center;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range])::-moz-placeholder {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox])::-moz-placeholder {
   color: white;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range])::placeholder {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox])::placeholder {
   color: white;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]).invalid {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox]).invalid {
   background-color: rgba(255, 0, 0, 0.2196078431);
 }
 .page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select {
@@ -168,6 +168,57 @@
   font-weight: bold;
   font-size: 18px;
 }
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container {
+  background: white;
+  border-radius: 10px;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container hr {
+  width: 90%;
+  margin: 0 auto;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion {
+  position: relative;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion .label {
+  position: relative;
+  padding: 10px 20px;
+  color: black;
+  cursor: pointer;
+  text-align: left;
+  font-weight: bold;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion .label::before {
+  content: "";
+  background: url(/wp-content/plugins/mini-golf-digital-scorecards/src/images/angle-down-solid.svg);
+  background-size: 12px;
+  height: 12px;
+  width: 12px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  font-size: 30px;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion .content {
+  position: relative;
+  background: white;
+  height: 0;
+  text-align: justify;
+  overflow: hidden;
+  transition: all 0.5s;
+  border-radius: 0px 0px 10px 10px;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion .content p {
+  padding: 0px 20px 20px 20px;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion.active .content {
+  height: 60px;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion.active .label::before {
+  transform: rotate(180deg);
+}
 .page-template-scorecard #scorecard-section #scorecard-form .form-buttons {
   margin: 0 auto;
   max-width: 270px;
@@ -192,5 +243,4 @@
 }
 .page-template-scorecard #scorecard-section #scorecard-form .form-buttons button#prevBtn {
   float: left;
-  display: none;
 }

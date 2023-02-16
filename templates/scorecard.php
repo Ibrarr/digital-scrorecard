@@ -19,8 +19,8 @@
                     <div class="custom-select">
                         <select name="course" id="course" value="">
                             <option value="" disabled selected>Select Course</option>
-                            <option value="madhouse">Madhouse</option>
-                            <option value="glasvegas">Glasvegas</option>
+                            <option value="9">Madhouse</option>
+                            <option value="9">Glasvegas</option>
                         </select>
                     </div>
                 </div>
@@ -38,22 +38,74 @@
                 <h2>Playing</h2>
                 <div class="form-field">
                     <div id="genoratedInputs">
-                        <input type="text" name="Player1" id="Player1" value="" disabled>
+                        <input type="text" name="Player1" id="Player1" placeholder="Player 1" value="">
                     </div>
                 </div>
             </div>
-            <div class="tab three">
+            <div class="tab">
                 <h1>Rules</h1>
                 <h2>Of The Game</h2>
-
                 <div class="form-field">
-                    <input name="rules" required="" id="checkbox" type="checkbox">
-                    <label for="checkbox">I Accept The Rules Of The Game</label>
+                    <div class="accordion-container">
+                        <div class="accordion">
+                            <div class="label">1. Group size bigger than 4?</div>
+                            <div class="content">
+                                <p>Testing</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="accordion">
+                            <div class="label">2. Group size bigger than 4?</div>
+                            <div class="content">
+                                <p>Testing</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="accordion">
+                            <div class="label">3. Group size bigger than 4?</div>
+                            <div class="content">
+                                <p>Testing</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="accordion">
+                            <div class="label">4. Group size bigger than 4?</div>
+                            <div class="content">
+                                <p>Testing</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="accordion">
+                            <div class="label">5. Group size bigger than 4?</div>
+                            <div class="content">
+                                <p>Testing</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="accordion">
+                            <div class="label">6. Group size bigger than 4?</div>
+                            <div class="content">
+                                <p>Testing</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="form-field">
+                    <label><input name="rules" required="" id="checkbox" type="checkbox">I Accept The Rules Of The Game</label>
+                </div>
+            </div>
+            <div class="tab">
+                <h1>Hole 1</h1>
+            </div>
+            <div class="tab">
+                <h1>Hole 2</h1>
+            </div>
+            <div class="tab">
+                <h1>Hole 3</h1>
             </div>
             <div class="form-buttons">
                 <button type="button" id="prevBtn">Previous</button>
-                <button type="button" id="nextBtn" class="next1">Let's Golf!</button>
+                <button type="button" id="nextBtn" class="next1">Next Hole</button>
             </div>
         </form>
     </div>
