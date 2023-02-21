@@ -311,10 +311,11 @@
   font-size: 1.2rem;
 }
 .page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter, .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter {
-  background: #000005;
   border-radius: 10px;
   font-size: 1rem;
   overflow: hidden;
+  border: 2px solid #e9a2c0;
+  background: #e9a2c0;
 }
 .page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .minus, .page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .plus, .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .minus, .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .plus {
   cursor: pointer;
@@ -332,8 +333,7 @@
   text-align: center;
   color: white;
   font-weight: bold;
-  border-top: 2px solid #e9a2c0;
-  box-shadow: inset 0 -2px 0 #e9a2c0;
+  background: #000005;
 }
 .page-template-scorecard #scorecard-section #scorecard-form .form-buttons, .page-template-results #scorecard-section #scorecard-form .form-buttons {
   margin: 0 auto;
