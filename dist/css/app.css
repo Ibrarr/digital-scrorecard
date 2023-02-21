@@ -352,6 +352,11 @@
   padding: 10px 20px;
   border: none;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .page-template-scorecard #scorecard-section #scorecard-form .form-buttons button#nextBtn, .page-template-results #scorecard-section #scorecard-form .form-buttons button#nextBtn {
   float: right;

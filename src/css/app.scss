@@ -401,6 +401,9 @@ $primary-colour: #c402d1;
                     padding: 10px 20px;
                     border: none;
                     cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
                     &#nextBtn {
                         float: right;
