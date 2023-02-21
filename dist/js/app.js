@@ -141,13 +141,22 @@ function showTab(n) {
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
   //... and fix the Previous/Next buttons:
-  if (n === 0 || n === 1 || n === 2) {
+  var course = document.getElementById("course");
+  var selectedCourse = course.value;
+  if (n === 0 || n === 1) {
     document.getElementById("prevBtn").style.display = "none";
     document.getElementById("nextBtn").innerHTML = "Let's Golf!";
+  } else if (n === 2) {
+    document.getElementById("nextBtn").innerHTML = "Let's Golf!";
+    // Create tabs for each hole
+    createNameInputs(selectedCourse);
+  } else if (n === 3) {
+    document.getElementById("prevBtn").style.display = "none";
+    document.getElementById("nextBtn").style.width = "100%";
+    document.getElementById("nextBtn").innerHTML = "Next Hole";
   } else if (n > 3) {
     document.getElementById("prevBtn").style.display = "inline";
     document.getElementById("nextBtn").style.width = "fit-content";
-  } else {
     document.getElementById("nextBtn").innerHTML = "Next Hole";
   }
   if (n == x.length - 1) {
@@ -183,11 +192,13 @@ function validateForm() {
   // This function deals with validation of the form fields
   var x,
     y,
+    z,
     i,
     valid = true;
   x = document.getElementsByClassName("tab");
   y = x[currentTab].getElementsByTagName("input");
   z = x[currentTab].getElementsByTagName("select");
+  checkboxRules = document.getElementById("checkboxRules").required;
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
@@ -213,15 +224,56 @@ function validateForm() {
   return valid; // return the valid status
 }
 
-/***/ }),
+// Checkbox Validation
+$(function () {
+  $('.form-field input[type="checkbox"]').change(function () {
+    if ($(this).is(":checked")) {
+      $(this).val('true');
+      $('.form-field input[type="checkbox"]').removeClass("invalid");
+    } else $(this).val('');
+  });
+});
 
-/***/ "./src/js/holes.js":
-/*!*************************!*\
-  !*** ./src/js/holes.js ***!
-  \*************************/
-/***/ (() => {
-
-
+// Create hole tabs and fields within
+function createNameInputs(num) {
+  for (var i = 0; i < num; i++) {
+    var holeTabs = document.createElement('div');
+    holeTabs.setAttribute('class', 'tab holes');
+    holeTabs.innerHTML = "<h1>Hole ".concat(i + 1, "</h1>");
+    var parent = document.getElementById('tab-section');
+    parent.appendChild(holeTabs);
+    var playerContainer = document.createElement('div');
+    playerContainer.setAttribute('class', 'playerContainer');
+    holeTabs.appendChild(playerContainer);
+    var players = document.getElementById('genoratedInputs').getElementsByTagName('input');
+    for (j = 0; j < players.length; j++) {
+      var playerName = players[j].value;
+      var eachPlayer = document.createElement('div');
+      eachPlayer.setAttribute('class', 'eachPlayer');
+      playerContainer.appendChild(eachPlayer);
+      var player = document.createElement('p');
+      player.textContent = playerName;
+      eachPlayer.appendChild(player);
+      var score = document.createElement('div');
+      score.setAttribute('class', 'putCounter');
+      eachPlayer.appendChild(score);
+      var minus = document.createElement('span');
+      minus.setAttribute('class', 'minus');
+      minus.textContent = '-';
+      score.appendChild(minus);
+      var number = document.createElement('input');
+      number.setAttribute('type', 'number');
+      number.setAttribute('name', 'score' + playerName);
+      number.setAttribute('class', 'currentScore');
+      number.setAttribute('value', '0');
+      score.appendChild(number);
+      var plus = document.createElement('span');
+      plus.setAttribute('class', 'plus');
+      plus.textContent = '+';
+      score.appendChild(plus);
+    }
+  }
+}
 
 /***/ }),
 
@@ -231,7 +283,7 @@ function validateForm() {
   \***************************/
 /***/ (() => {
 
-$('#nextBtn.next1').on('click', function () {
+$('#nextBtn').on('click', function () {
   document.getElementById("Player1").value = document.getElementById("initialPlayer").value;
   var numOfPlayers = document.getElementById("numPlayers").value - 1;
   createNameInputs(numOfPlayers);
@@ -245,10 +297,39 @@ function createNameInputs(num) {
     inputs.setAttribute('id', 'Player' + (i + 2));
     inputs.setAttribute('placeholder', 'Player ' + (i + 2));
     inputs.setAttribute('value', '');
-    var box = document.getElementById('genoratedInputs');
-    box.appendChild(inputs);
+    var parent = document.getElementById('genoratedInputs');
+    parent.appendChild(inputs);
   }
 }
+
+/***/ }),
+
+/***/ "./src/js/plusminus.js":
+/*!*****************************!*\
+  !*** ./src/js/plusminus.js ***!
+  \*****************************/
+/***/ (() => {
+
+jQuery(function ($) {
+  $(document).ready(function () {
+    $(document).on('click', '.minus', function () {
+      var $input = $(this).parent().find('input');
+      var count = parseInt($input.val()) - 1;
+      count = count < 0 ? 0 : count;
+      $input.val(count);
+      $input.change();
+      return false;
+    });
+    $(document).on('click', '.plus', function () {
+      var $input = $(this).parent().find('input');
+      var count = parseInt($input.val()) + 1;
+      count = count > 5 ? 5 : count;
+      $input.val(count);
+      $input.change();
+      return false;
+    });
+  });
+});
 
 /***/ }),
 
@@ -424,7 +505,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/dropdown.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/slider.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/players.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/holes.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/plusminus.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/accordian.js")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/css/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);

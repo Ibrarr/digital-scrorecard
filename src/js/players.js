@@ -1,4 +1,4 @@
-$('#nextBtn.next1').on('click', function(){
+$('#nextBtn').on('click', function(){
     document.getElementById("Player1").value = document.getElementById("initialPlayer").value;
     const numOfPlayers = document.getElementById("numPlayers").value-1;
     createNameInputs(numOfPlayers);
@@ -13,7 +13,7 @@ function createNameInputs(num) {
         inputs.setAttribute('id', 'Player'+ (i+2));
         inputs.setAttribute('placeholder', 'Player '+ (i+2));
         inputs.setAttribute('value', '');
-        const box = document.getElementById('genoratedInputs');
-        box.appendChild(inputs);
+        const parent = document.getElementById('genoratedInputs');
+        parent.appendChild(inputs);
     }
 }

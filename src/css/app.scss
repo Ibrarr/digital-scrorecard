@@ -256,6 +256,75 @@ $primary-colour: #c402d1;
 
             }
 
+            .form-field:has(input[type="checkbox"].invalid) {
+                background: #ff000038;
+                border-radius: 10px;
+            }
+
+            .playerContainer {
+                margin: 0 auto;
+                max-width: 270px;
+                padding: 10px;
+                position: relative;
+                border: 2px solid white;
+                border-radius: 10px;
+                position: relative;
+                margin-bottom: 10px;
+
+                .eachPlayer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 10px 0;
+                    position: relative;
+                    border-bottom: 2px solid white;
+
+                    &:first-child {
+                        padding-top: 0px;
+                    }
+
+                    &:last-child {
+                        padding-bottom: 0px;
+                        border-bottom: none;
+                    }
+    
+                    p {
+                        color: white;
+                        font-weight: bold;
+                        font-size: 1.2rem;
+                    }
+    
+                    .putCounter {
+                        background: #000005;
+                        border-radius: 10px;
+                        font-size: 1rem;
+                        overflow: hidden;
+                        user-select: none;
+    
+                        .minus, .plus {
+                            cursor: pointer;
+                            padding: 10px;
+                            background: #e9a2c0;
+                            color: black;
+                            font-weight: bold;
+                        }
+    
+                        input.currentScore[type=number] {
+                            max-width: 40px;
+                            min-width: 40px;
+                            padding: 10px;
+                            border: none;
+                            background: none;
+                            text-align: center;
+                            color: white;
+                            font-weight: bold;
+                            border-top: 2px solid #e9a2c0;
+                            box-shadow: inset 0 -2px 0 #e9a2c0;
+                        }
+                    }
+                }
+            }
+
             .form-buttons {
                 margin: 0 auto;
                 max-width: 270px;
@@ -280,6 +349,7 @@ $primary-colour: #c402d1;
                     }
 
                     &#prevBtn {
+                        display: none;
                         float: left;
                     }
                 }
