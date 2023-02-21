@@ -8,7 +8,7 @@ class Templates
 
     public function __construct()
     {
-        $this->templates = array('templates/scorecard.php' => 'Scorecard');
+        $this->templates = array('templates/scorecard.php' => 'Scorecard', 'templates/results.php' => 'Results');
         add_filter('theme_page_templates', array($this, 'custom_template'));
         add_filter('template_include', array($this, 'load_template'));
     }

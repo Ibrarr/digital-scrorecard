@@ -1,27 +1,10 @@
-const accordion = document.getElementsByClassName('accordion');
+$(document).ready(function(){
+  $(".accordion").on("click", ".heading", function() {
 
-for (i=0; i<accordion.length; i++) {
-  accordion[i].addEventListener('click', function () {
-    this.classList.toggle('active');
-  })
-}
+  $(this).toggleClass("active").next().slideToggle();
 
-// var acc = document.getElementsByClassName("accordion");
-
-// for (let i = 0; i < acc.length; i++) {
-//   acc[i].addEventListener("click", function() {
-//     for (let j = 0; j < acc.length; j++) {
-//     acc[j].classList.remove("active");
-//       if(j!=i){
-//         acc[j].nextElementSibling.style.maxHeight = null;
-//       }
-//     }
-//     this.classList.add("active");
-//     var panel = this.nextElementSibling;
-//     if (panel.style.maxHeight){
-//       panel.style.maxHeight = null;
-//     } else {
-//       panel.style.maxHeight = panel.scrollHeight + "px";
-//     }
-//   });
-// }
+  $(".contents").not($(this).next()).slideUp(300);
+               
+  $(this).siblings().removeClass("active");
+  });
+});

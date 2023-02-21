@@ -1,21 +1,77 @@
-.page-template-scorecard header, .page-template-scorecard footer {
+.page-template-scorecard header, .page-template-scorecard footer, .page-template-results header, .page-template-results footer {
   display: none;
 }
-.page-template-scorecard #scorecard-section {
+.page-template-scorecard .results-container, .page-template-results .results-container {
+  background: #000005;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  max-width: 270px;
+  padding: 15px;
+  margin: auto;
+}
+.page-template-scorecard .results-container .single-winner, .page-template-results .results-container .single-winner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.page-template-scorecard .results-container .single-winner:last-child, .page-template-results .results-container .single-winner:last-child {
+  margin-bottom: 0;
+}
+.page-template-scorecard .results-container .single-winner .winner-position img, .page-template-results .results-container .single-winner .winner-position img {
+  width: 40px;
+  height: 42px;
+  position: relative;
+  top: 4px;
+  margin-right: 15px;
+}
+.page-template-scorecard .results-container .single-winner .winner-position span, .page-template-results .results-container .single-winner .winner-position span {
+  width: 40px;
+  height: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 0px;
+  margin-right: 15px;
+  font-family: "Helvegan - Inky", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 25px;
+}
+.page-template-scorecard .results-container .single-winner .winner-info p, .page-template-results .results-container .single-winner .winner-info p {
+  font-family: "Helvegan - Inky", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 25px;
+}
+.page-template-scorecard .results-container .single-winner .winner-info p span, .page-template-results .results-container .single-winner .winner-info p span {
+  background: white;
+  border-radius: 100%;
+  color: black;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 10px;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+}
+.page-template-scorecard #scorecard-section, .page-template-results #scorecard-section {
   background: url(/wp-content/plugins/mini-golf-digital-scorecards/src/images/bg.png);
   background-size: cover;
   height: 100vh;
   padding: 20px;
 }
-.page-template-scorecard #scorecard-section .header-logo {
+.page-template-scorecard #scorecard-section .header-logo, .page-template-results #scorecard-section .header-logo {
   width: 100%;
   text-align: center;
   padding-bottom: 20px;
 }
-.page-template-scorecard #scorecard-section .header-logo img {
+.page-template-scorecard #scorecard-section .header-logo img, .page-template-results #scorecard-section .header-logo img {
   width: 150px;
 }
-.page-template-scorecard #scorecard-section h1 {
+.page-template-scorecard #scorecard-section h1, .page-template-results #scorecard-section h1 {
   font-family: "Helvegon Outline", Helvetica, Arial, Lucida, sans-serif;
   text-transform: uppercase;
   font-size: 4.8rem !important;
@@ -23,28 +79,28 @@
   text-align: center;
   text-shadow: 0 0 7px #c402d1, 0 0 10px #c402d1, 0 0 21px #c402d1, 0 0 42px #c402d1, 0 0 82px #c402d1, 0 0 151px #c402d1;
 }
-.page-template-scorecard #scorecard-section h2 {
+.page-template-scorecard #scorecard-section h2, .page-template-results #scorecard-section h2 {
   font-family: "Helvegan - Inky", Helvetica, Arial, Lucida, sans-serif;
   font-size: 2.8rem !important;
   text-align: center;
   color: white !important;
 }
-.page-template-scorecard #scorecard-section #scorecard-form {
+.page-template-scorecard #scorecard-section #scorecard-form, .page-template-results #scorecard-section #scorecard-form {
   text-align: center;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .tab {
+.page-template-scorecard #scorecard-section #scorecard-form .tab, .page-template-results #scorecard-section #scorecard-form .tab {
   display: none;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .tab.two input:not(:last-child) {
+.page-template-scorecard #scorecard-section #scorecard-form .tab.two input:not(:last-child), .page-template-results #scorecard-section #scorecard-form .tab.two input:not(:last-child) {
   margin-bottom: 10px;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field, .page-template-results #scorecard-section #scorecard-form .form-field {
   margin: 0 auto;
   max-width: 270px;
   padding: 10px 0;
   position: relative;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field label {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field label, .page-template-results #scorecard-section #scorecard-form .form-field label {
   color: #B4FEE7;
   font-size: 1.1rem;
   display: inline-block;
@@ -52,7 +108,7 @@
   margin-bottom: 10px;
   font-weight: bold;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox]) {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox]), .page-template-results #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox]) {
   background: #000005;
   border: 2px solid white;
   border-radius: 10px;
@@ -62,32 +118,32 @@
   padding: 10px 20px;
   text-align: center;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox])::-moz-placeholder {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox])::-moz-placeholder, .page-template-results #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox])::-moz-placeholder {
   color: white;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox])::placeholder {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox])::placeholder, .page-template-results #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox])::placeholder {
   color: white;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox]).invalid {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox]).invalid, .page-template-results #scorecard-section #scorecard-form .form-field input:not([type=range]):not([type=checkbox]).invalid {
   background-color: rgba(255, 0, 0, 0.2196078431);
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select {
   position: relative;
   font-family: Arial;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select select.invalid + .select-selected {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select select.invalid + .select-selected, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select select.invalid + .select-selected {
   background-color: rgba(255, 0, 0, 0.2196078431) !important;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select select {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select select, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select select {
   display: none;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items div, .page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-selected {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items div, .page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-selected, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select .select-items div, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select .select-selected {
   color: #ffffff;
   padding: 10px 20px;
   border-bottom: 2px solid white;
   cursor: pointer;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-selected {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-selected, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select .select-selected {
   background: #000005;
   border: 2px solid white !important;
   border-radius: 10px;
@@ -95,7 +151,7 @@
   min-width: 270px;
   text-align: center;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-selected:after {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-selected:after, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select .select-selected:after {
   position: absolute;
   content: "";
   top: 22px;
@@ -105,11 +161,11 @@
   border: 6px solid transparent;
   border-color: #fff transparent transparent transparent;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-selected.select-arrow-active:after {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-selected.select-arrow-active:after, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select .select-selected.select-arrow-active:after {
   border-color: transparent transparent #fff transparent;
   top: 11px;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select .select-items {
   position: absolute;
   top: 100%;
   left: 0;
@@ -124,22 +180,22 @@
   margin-top: -2px;
   background: #000005;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items div:last-child {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items div:last-child, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select .select-items div:last-child {
   border: none;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items div:hover, .page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items .same-as-selected {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items div:hover, .page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-items .same-as-selected, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select .select-items div:hover, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select .select-items .same-as-selected {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-hide {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .custom-select .select-hide, .page-template-results #scorecard-section #scorecard-form .form-field .custom-select .select-hide {
   display: none;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer, .page-template-results #scorecard-section #scorecard-form .form-field .slidecontainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   align-items: center;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer .slider {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer .slider, .page-template-results #scorecard-section #scorecard-form .form-field .slidecontainer .slider {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -149,7 +205,7 @@
   background: #979797;
   outline: none;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer .slider::-webkit-slider-thumb {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer .slider::-webkit-slider-thumb, .page-template-results #scorecard-section #scorecard-form .form-field .slidecontainer .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 25px;
@@ -159,71 +215,65 @@
   cursor: pointer;
   box-shadow: 0 0 3px #c402d1, 0 0 10px #c402d1, 0 0 21px #c402d1, 0 0 42px #c402d1, 0 0 82px #c402d1, 0 0 151px #c402d1;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer .slider:hover {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer .slider:hover, .page-template-results #scorecard-section #scorecard-form .form-field .slidecontainer .slider:hover {
   opacity: 1;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer span#totalNumPlayers {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .slidecontainer span#totalNumPlayers, .page-template-results #scorecard-section #scorecard-form .form-field .slidecontainer span#totalNumPlayers {
   margin-left: 20px;
   color: white;
   font-weight: bold;
   font-size: 18px;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container {
-  background: white;
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion, .page-template-results #scorecard-section #scorecard-form .form-field .accordion {
+  border: 2px solid white;
   border-radius: 10px;
-}
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container hr {
-  width: 90%;
-  margin: 0 auto;
-}
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion {
-  position: relative;
-}
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion .label {
-  position: relative;
-  padding: 10px 20px;
-  color: black;
-  cursor: pointer;
   text-align: left;
-  font-weight: bold;
+  background: #000005;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion .label::before {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion > :last-child, .page-template-results #scorecard-section #scorecard-form .form-field .accordion > :last-child {
+  border-bottom: 0 !important;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion .heading, .page-template-results #scorecard-section #scorecard-form .form-field .accordion .heading {
+  color: white;
+  border-bottom: 2px solid white;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion .heading:nth-last-child(2), .page-template-results #scorecard-section #scorecard-form .form-field .accordion .heading:nth-last-child(2) {
+  border-bottom: 0;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion .heading::before, .page-template-results #scorecard-section #scorecard-form .form-field .accordion .heading::before {
   content: "";
-  background: url(/wp-content/plugins/mini-golf-digital-scorecards/src/images/angle-down-solid.svg);
-  background-size: 12px;
-  height: 12px;
-  width: 12px;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 50%;
-  right: 12px;
-  font-size: 30px;
-  transform: translateY(-50%);
-  transition: all 0.3s;
-}
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion .content {
-  position: relative;
-  background: white;
-  height: 0;
-  text-align: justify;
-  overflow: hidden;
+  vertical-align: middle;
+  display: inline-block;
+  border-top: 7px solid #f5f5f5;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  float: right;
+  transform: rotate(0);
   transition: all 0.5s;
-  border-radius: 0px 0px 10px 10px;
+  margin-top: 5px;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion .content p {
-  padding: 0px 20px 20px 20px;
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion .active.heading::before, .page-template-results #scorecard-section #scorecard-form .form-field .accordion .active.heading::before {
+  transform: rotate(-180deg);
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion.active .content {
-  height: 60px;
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion .not-active.heading::before, .page-template-results #scorecard-section #scorecard-form .form-field .accordion .not-active.heading::before {
+  transform: rotate(0deg);
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion-container .accordion.active .label::before {
-  transform: rotate(180deg);
+.page-template-scorecard #scorecard-section #scorecard-form .form-field .accordion .contents, .page-template-results #scorecard-section #scorecard-form .form-field .accordion .contents {
+  display: none;
+  border-bottom: 2px solid white;
+  padding: 15px;
+  color: white;
+  font-size: 13px;
+  line-height: 1.5;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-field:has(input[type=checkbox].invalid) {
+.page-template-scorecard #scorecard-section #scorecard-form .form-field:has(input[type=checkbox].invalid), .page-template-results #scorecard-section #scorecard-form .form-field:has(input[type=checkbox].invalid) {
   background: rgba(255, 0, 0, 0.2196078431);
   border-radius: 10px;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .playerContainer {
+.page-template-scorecard #scorecard-section #scorecard-form .playerContainer, .page-template-results #scorecard-section #scorecard-form .playerContainer {
   margin: 0 auto;
   max-width: 270px;
   padding: 10px;
@@ -233,7 +283,12 @@
   position: relative;
   margin-bottom: 10px;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer {
+.page-template-scorecard #scorecard-section #scorecard-form .playerContainer input::-webkit-outer-spin-button,
+.page-template-scorecard #scorecard-section #scorecard-form .playerContainer input::-webkit-inner-spin-button, .page-template-results #scorecard-section #scorecard-form .playerContainer input::-webkit-outer-spin-button,
+.page-template-results #scorecard-section #scorecard-form .playerContainer input::-webkit-inner-spin-button {
+  display: none;
+}
+.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer, .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,35 +298,32 @@
   position: relative;
   border-bottom: 2px solid white;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer:first-child {
+.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer:first-child, .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer:first-child {
   padding-top: 0px;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer:last-child {
+.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer:last-child, .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer:last-child {
   padding-bottom: 0px;
   border-bottom: none;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer p {
+.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer p, .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer p {
   color: white;
   font-weight: bold;
   font-size: 1.2rem;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter {
+.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter, .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter {
   background: #000005;
   border-radius: 10px;
   font-size: 1rem;
   overflow: hidden;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .minus, .page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .plus {
+.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .minus, .page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .plus, .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .minus, .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .plus {
   cursor: pointer;
   padding: 10px;
   background: #e9a2c0;
   color: black;
   font-weight: bold;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter input.currentScore[type=number] {
+.page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter input.currentScore[type=number], .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter input.currentScore[type=number] {
   max-width: 40px;
   min-width: 40px;
   padding: 10px;
@@ -283,13 +335,13 @@
   border-top: 2px solid #e9a2c0;
   box-shadow: inset 0 -2px 0 #e9a2c0;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-buttons {
+.page-template-scorecard #scorecard-section #scorecard-form .form-buttons, .page-template-results #scorecard-section #scorecard-form .form-buttons {
   margin: 0 auto;
   max-width: 270px;
   padding: 10px 0;
   position: relative;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-buttons button {
+.page-template-scorecard #scorecard-section #scorecard-form .form-buttons button, .page-template-results #scorecard-section #scorecard-form .form-buttons button {
   background-color: #e9a2c0;
   border-radius: 10px;
   color: #000005;
@@ -301,11 +353,11 @@
   border: none;
   cursor: pointer;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-buttons button#nextBtn {
+.page-template-scorecard #scorecard-section #scorecard-form .form-buttons button#nextBtn, .page-template-results #scorecard-section #scorecard-form .form-buttons button#nextBtn {
   float: right;
   width: 100%;
 }
-.page-template-scorecard #scorecard-section #scorecard-form .form-buttons button#prevBtn {
+.page-template-scorecard #scorecard-section #scorecard-form .form-buttons button#prevBtn, .page-template-results #scorecard-section #scorecard-form .form-buttons button#prevBtn {
   display: none;
   float: left;
 }

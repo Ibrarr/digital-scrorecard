@@ -7,32 +7,13 @@
   \*****************************/
 /***/ (() => {
 
-var accordion = document.getElementsByClassName('accordion');
-for (i = 0; i < accordion.length; i++) {
-  accordion[i].addEventListener('click', function () {
-    this.classList.toggle('active');
+$(document).ready(function () {
+  $(".accordion").on("click", ".heading", function () {
+    $(this).toggleClass("active").next().slideToggle();
+    $(".contents").not($(this).next()).slideUp(300);
+    $(this).siblings().removeClass("active");
   });
-}
-
-// var acc = document.getElementsByClassName("accordion");
-
-// for (let i = 0; i < acc.length; i++) {
-//   acc[i].addEventListener("click", function() {
-//     for (let j = 0; j < acc.length; j++) {
-//     acc[j].classList.remove("active");
-//       if(j!=i){
-//         acc[j].nextElementSibling.style.maxHeight = null;
-//       }
-//     }
-//     this.classList.add("active");
-//     var panel = this.nextElementSibling;
-//     if (panel.style.maxHeight){
-//       panel.style.maxHeight = null;
-//     } else {
-//       panel.style.maxHeight = panel.scrollHeight + "px";
-//     }
-//   });
-// }
+});
 
 /***/ }),
 
@@ -160,7 +141,11 @@ function showTab(n) {
     document.getElementById("nextBtn").innerHTML = "Next Hole";
   }
   if (n == x.length - 1) {
+    createScoreArray();
     document.getElementById("nextBtn").innerHTML = "See Results";
+    document.getElementById("prevBtn").style.display = "none";
+    document.getElementById("nextBtn").style.display = "none";
+    document.getElementById("nextBtn").setAttribute("type", "submit");
   }
 }
 document.getElementById("nextBtn").addEventListener("click", function () {
@@ -238,7 +223,7 @@ $(function () {
 function createNameInputs(num) {
   for (var i = 0; i < num; i++) {
     var holeTabs = document.createElement('div');
-    holeTabs.setAttribute('class', 'tab holes');
+    holeTabs.setAttribute('class', 'tab hole' + (i + 1));
     holeTabs.innerHTML = "<h1>Hole ".concat(i + 1, "</h1>");
     var parent = document.getElementById('tab-section');
     parent.appendChild(holeTabs);
@@ -263,7 +248,7 @@ function createNameInputs(num) {
       score.appendChild(minus);
       var number = document.createElement('input');
       number.setAttribute('type', 'number');
-      number.setAttribute('name', 'score' + playerName);
+      number.setAttribute('name', playerName);
       number.setAttribute('class', 'currentScore');
       number.setAttribute('value', '0');
       score.appendChild(number);
@@ -273,6 +258,26 @@ function createNameInputs(num) {
       score.appendChild(plus);
     }
   }
+}
+function createScoreArray() {
+  var data = {};
+  var scoresArray = [];
+  var players = document.querySelector('.playerContainer').getElementsByTagName('input');
+  for (i = 0; i < players.length; i++) {
+    var playerValue = 0;
+    var playerName = players[i].getAttribute("name");
+    var numInputs = document.getElementsByName(playerName);
+    for (var j = 0; j < numInputs.length; j++) {
+      playerValue += parseInt(numInputs[j].value);
+    }
+    scoresArray[i] = {
+      'name': playerName,
+      'score': playerValue
+    };
+  }
+  data['data'] = scoresArray;
+  console.log(data);
+  document.querySelector('#gameScores').value = JSON.stringify(data);
 }
 
 /***/ }),
@@ -310,24 +315,22 @@ function createNameInputs(num) {
   \*****************************/
 /***/ (() => {
 
-jQuery(function ($) {
-  $(document).ready(function () {
-    $(document).on('click', '.minus', function () {
-      var $input = $(this).parent().find('input');
-      var count = parseInt($input.val()) - 1;
-      count = count < 0 ? 0 : count;
-      $input.val(count);
-      $input.change();
-      return false;
-    });
-    $(document).on('click', '.plus', function () {
-      var $input = $(this).parent().find('input');
-      var count = parseInt($input.val()) + 1;
-      count = count > 5 ? 5 : count;
-      $input.val(count);
-      $input.change();
-      return false;
-    });
+$(document).ready(function () {
+  $(document).on('click', '.minus', function () {
+    var $input = $(this).parent().find('input');
+    var count = parseInt($input.val()) - 1;
+    count = count < 0 ? 0 : count;
+    $input.val(count);
+    $input.change();
+    return false;
+  });
+  $(document).on('click', '.plus', function () {
+    var $input = $(this).parent().find('input');
+    var count = parseInt($input.val()) + 1;
+    count = count > 6 ? 6 : count;
+    $input.val(count);
+    $input.change();
+    return false;
   });
 });
 

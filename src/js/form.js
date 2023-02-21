@@ -26,7 +26,11 @@ function showTab(n) {
     }
 
     if (n == (x.length - 1)) {
+        createScoreArray();
         document.getElementById("nextBtn").innerHTML = "See Results";
+        document.getElementById("prevBtn").style.display = "none";
+        document.getElementById("nextBtn").style.display = "none";
+        document.getElementById("nextBtn").setAttribute("type", "submit");
     }
 }
 document.getElementById("nextBtn").addEventListener("click", function(){nextPrev(1);}, false);
@@ -99,7 +103,7 @@ $(function() {
 function createNameInputs(num) {
     for(var i = 0; i < num; i++) {
         const holeTabs = document.createElement('div');
-        holeTabs.setAttribute('class', 'tab holes');
+        holeTabs.setAttribute('class', 'tab hole' + (i+1));
         holeTabs.innerHTML = `<h1>Hole ${i+1}</h1>`;
         const parent = document.getElementById('tab-section');
         parent.appendChild(holeTabs);
@@ -131,7 +135,7 @@ function createNameInputs(num) {
 
             var number = document.createElement('input');
             number.setAttribute('type', 'number');
-            number.setAttribute('name', 'score' + playerName);
+            number.setAttribute('name', playerName);
             number.setAttribute('class', 'currentScore');
             number.setAttribute('value', '0');
             score.appendChild(number);
@@ -142,4 +146,28 @@ function createNameInputs(num) {
             score.appendChild(plus);
         }
     }
+}
+
+function createScoreArray() {
+    var data = {};
+    var scoresArray = [];
+    var players = document.querySelector('.playerContainer').getElementsByTagName('input');
+    for( i=0; i< players.length; i++ ) {
+        var playerValue = 0;
+        var playerName = players[i].getAttribute("name");
+        var numInputs = document.getElementsByName(playerName);
+
+        for (var j = 0; j < numInputs.length; j++) {
+            playerValue += parseInt(numInputs[j].value);
+        }
+
+        scoresArray[i] = {
+            'name': playerName,
+            'score': playerValue
+        }
+    }
+    
+    data['data'] = scoresArray;
+    console.log(data);
+    document.querySelector('#gameScores').value = JSON.stringify(data);
 }
