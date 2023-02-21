@@ -58,7 +58,7 @@
   line-height: 35px;
 }
 .page-template-scorecard #scorecard-section, .page-template-results #scorecard-section {
-  background: url(/wp-content/plugins/mini-golf-digital-scorecards/src/images/bg.png);
+  background: url(http://oneunder.co.uk/wp-content/uploads/2023/02/bg.png);
   background-size: cover;
   height: 100vh;
   padding: 20px;
