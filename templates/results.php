@@ -8,11 +8,26 @@
     if ($_POST) {
         $uniqid = $_POST['uniqid'];
         $scores = stripslashes($_POST['gameScores']);
+
+        global $wpdb;
+        $table_name = $wpdb->prefix . "digital_scorecard";
+        $result = $wpdb->get_results("SELECT id, uniqid FROM $table_name");
+        if (array_search($uniqid, array_column($result, 'uniqid')) !== FALSE) {
+        } else {
+            $wpdb->insert(
+                $table_name,
+                array(
+                    'time' => current_time('mysql'),
+                    'uniqid' => $uniqid,
+                    'scores' => $scores,
+                )
+            );
+        }
+
         $obj = json_decode($scores);
         usort($obj->data, function ($a, $b) {
             return $a->score < $b->score ? -1 : 1;
         });
-
     ?>
         <div class="results-container">
             <?php
@@ -87,17 +102,6 @@
     } else {
         echo 'just vieweing';
     }
-    // $wpdb->insert(
-    //     'tabletest',
-    //     array(
-    //         'column1' => $_POST["initialPlayer"],
-    //         'column2' => 123,
-    //     ),
-    //     array(
-    //         '%s',
-    //         '%d',
-    //     )
-    // );
     ?>
 </section>
 

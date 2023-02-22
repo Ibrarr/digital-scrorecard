@@ -11,8 +11,10 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+use App\CreateDatabaseTable;
 use App\EnqueueScripts;
 use App\Templates;
 
 $templates = new Templates;
 $enqueueScripts = new EnqueueScripts;
+$createDatabaseTable = new CreateDatabaseTable;
