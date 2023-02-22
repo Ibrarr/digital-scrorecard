@@ -8,20 +8,21 @@ function showTab(n) {
     //... and fix the Previous/Next buttons:
     var course = document.getElementById("course");
     var selectedCourse = course.value;
-    if (n === 0 || n === 1) {
+    if (n === 0) {
         document.getElementById("prevBtn").style.display = "none";
         document.getElementById("nextBtn").innerHTML = "Let's Golf!";
-    } else if (n === 2){
-        document.getElementById("nextBtn").innerHTML = "Let's Golf!";
-        // Create tabs for each hole
-        createNameInputs(selectedCourse);
-    } else if (n === 3){
-        document.getElementById("prevBtn").style.display = "none";
         document.getElementById("nextBtn").style.width = "100%";
-        document.getElementById("nextBtn").innerHTML = "Next Hole";
-    } else if (n > 3) {
+    } else if (n === 1) {
         document.getElementById("prevBtn").style.display = "inline";
         document.getElementById("nextBtn").style.width = "fit-content";
+        const numOfPlayers = document.getElementById("numPlayers").value;
+        createNameInputs(numOfPlayers);
+    } else if (n === 2){
+        document.getElementById("nextBtn").innerHTML = "Let's Golf!";
+        createNameInputsHoles(selectedCourse);
+    } else if (n === 3){
+        document.getElementById("nextBtn").innerHTML = "Next Hole";
+    } else if (n > 3) {
         document.getElementById("nextBtn").innerHTML = "Next Hole";
     }
 
@@ -99,14 +100,44 @@ $(function() {
     });
   });
 
-// Create hole tabs and fields within
 function createNameInputs(num) {
+    const removeDiv = document.getElementById("genoratedInputs");
+    if (removeDiv) {
+        removeDiv.remove();
+    } else {}
+    const genoratedInputs = document.createElement('div');
+    genoratedInputs.setAttribute('id', 'genoratedInputs');
+    const parent = document.querySelector('.tab.two .form-field');
+    parent.appendChild(genoratedInputs);
+
+    for(var i = 0; i < num; i++) {
+        const inputs = document.createElement('input');
+        inputs.setAttribute('type', 'text');
+        inputs.setAttribute('name', 'Player' + (i+1));
+        inputs.setAttribute('id', 'Player'+ (i+1));
+        inputs.setAttribute('placeholder', 'Player '+ (i+1));
+        inputs.setAttribute('value', '');
+        genoratedInputs.appendChild(inputs);
+    }
+    document.getElementById("Player1").value = document.getElementById("initialPlayer").value;
+}
+
+// Create hole tabs and fields within
+function createNameInputsHoles(num) {
+    const removeDiv = document.getElementById("holeTabContainer");
+    if (removeDiv) {
+        removeDiv.remove();
+    } else {}
+    const holeTabContainer = document.createElement('div');
+    holeTabContainer.setAttribute('id', 'holeTabContainer');
+    const tabSection = document.getElementById('tab-section');
+    tabSection.appendChild(holeTabContainer);
+
     for(var i = 0; i < num; i++) {
         const holeTabs = document.createElement('div');
         holeTabs.setAttribute('class', 'tab hole' + (i+1));
         holeTabs.innerHTML = `<h1>Hole ${i+1}</h1>`;
-        const parent = document.getElementById('tab-section');
-        parent.appendChild(holeTabs);
+        holeTabContainer.appendChild(holeTabs);
         
         const playerContainer = document.createElement('div');
         playerContainer.setAttribute('class', 'playerContainer');

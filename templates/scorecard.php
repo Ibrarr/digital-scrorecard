@@ -39,11 +39,7 @@
                 <div class="tab two">
                     <h1>Who's</h1>
                     <h2>Playing</h2>
-                    <div class="form-field">
-                        <div id="genoratedInputs">
-                            <input type="text" name="Player1" id="Player1" placeholder="Player 1" value="">
-                        </div>
-                    </div>
+                    <div class="form-field"></div>
                 </div>
                 <div class="tab three">
                     <h1>Rules</h1>

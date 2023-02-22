@@ -124,20 +124,21 @@ function showTab(n) {
   //... and fix the Previous/Next buttons:
   var course = document.getElementById("course");
   var selectedCourse = course.value;
-  if (n === 0 || n === 1) {
+  if (n === 0) {
     document.getElementById("prevBtn").style.display = "none";
     document.getElementById("nextBtn").innerHTML = "Let's Golf!";
-  } else if (n === 2) {
-    document.getElementById("nextBtn").innerHTML = "Let's Golf!";
-    // Create tabs for each hole
-    createNameInputs(selectedCourse);
-  } else if (n === 3) {
-    document.getElementById("prevBtn").style.display = "none";
     document.getElementById("nextBtn").style.width = "100%";
-    document.getElementById("nextBtn").innerHTML = "Next Hole";
-  } else if (n > 3) {
+  } else if (n === 1) {
     document.getElementById("prevBtn").style.display = "inline";
     document.getElementById("nextBtn").style.width = "fit-content";
+    var numOfPlayers = document.getElementById("numPlayers").value;
+    createNameInputs(numOfPlayers);
+  } else if (n === 2) {
+    document.getElementById("nextBtn").innerHTML = "Let's Golf!";
+    createNameInputsHoles(selectedCourse);
+  } else if (n === 3) {
+    document.getElementById("nextBtn").innerHTML = "Next Hole";
+  } else if (n > 3) {
     document.getElementById("nextBtn").innerHTML = "Next Hole";
   }
   if (n == x.length - 1) {
@@ -218,15 +219,42 @@ $(function () {
     } else $(this).val('');
   });
 });
+function createNameInputs(num) {
+  var removeDiv = document.getElementById("genoratedInputs");
+  if (removeDiv) {
+    removeDiv.remove();
+  } else {}
+  var genoratedInputs = document.createElement('div');
+  genoratedInputs.setAttribute('id', 'genoratedInputs');
+  var parent = document.querySelector('.tab.two .form-field');
+  parent.appendChild(genoratedInputs);
+  for (var i = 0; i < num; i++) {
+    var inputs = document.createElement('input');
+    inputs.setAttribute('type', 'text');
+    inputs.setAttribute('name', 'Player' + (i + 1));
+    inputs.setAttribute('id', 'Player' + (i + 1));
+    inputs.setAttribute('placeholder', 'Player ' + (i + 1));
+    inputs.setAttribute('value', '');
+    genoratedInputs.appendChild(inputs);
+  }
+  document.getElementById("Player1").value = document.getElementById("initialPlayer").value;
+}
 
 // Create hole tabs and fields within
-function createNameInputs(num) {
+function createNameInputsHoles(num) {
+  var removeDiv = document.getElementById("holeTabContainer");
+  if (removeDiv) {
+    removeDiv.remove();
+  } else {}
+  var holeTabContainer = document.createElement('div');
+  holeTabContainer.setAttribute('id', 'holeTabContainer');
+  var tabSection = document.getElementById('tab-section');
+  tabSection.appendChild(holeTabContainer);
   for (var i = 0; i < num; i++) {
     var holeTabs = document.createElement('div');
     holeTabs.setAttribute('class', 'tab hole' + (i + 1));
     holeTabs.innerHTML = "<h1>Hole ".concat(i + 1, "</h1>");
-    var parent = document.getElementById('tab-section');
-    parent.appendChild(holeTabs);
+    holeTabContainer.appendChild(holeTabs);
     var playerContainer = document.createElement('div');
     playerContainer.setAttribute('class', 'playerContainer');
     holeTabs.appendChild(playerContainer);
@@ -278,33 +306,6 @@ function createScoreArray() {
   data['data'] = scoresArray;
   console.log(data);
   document.querySelector('#gameScores').value = JSON.stringify(data);
-}
-
-/***/ }),
-
-/***/ "./src/js/players.js":
-/*!***************************!*\
-  !*** ./src/js/players.js ***!
-  \***************************/
-/***/ (() => {
-
-$('#nextBtn').on('click', function () {
-  document.getElementById("Player1").value = document.getElementById("initialPlayer").value;
-  var numOfPlayers = document.getElementById("numPlayers").value - 1;
-  createNameInputs(numOfPlayers);
-  $(this).unbind('click');
-});
-function createNameInputs(num) {
-  for (var i = 0; i < num; i++) {
-    var inputs = document.createElement('input');
-    inputs.setAttribute('type', 'text');
-    inputs.setAttribute('name', 'Player' + (i + 2));
-    inputs.setAttribute('id', 'Player' + (i + 2));
-    inputs.setAttribute('placeholder', 'Player ' + (i + 2));
-    inputs.setAttribute('value', '');
-    var parent = document.getElementById('genoratedInputs');
-    parent.appendChild(inputs);
-  }
 }
 
 /***/ }),
@@ -507,7 +508,6 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/form.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/dropdown.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/slider.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/players.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/plusminus.js")))
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/js/accordian.js")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./src/css/app.scss")))
