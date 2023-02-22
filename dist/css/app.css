@@ -334,6 +334,7 @@
   color: white;
   font-weight: bold;
   background: #000005;
+  -moz-appearance: textfield;
 }
 .page-template-scorecard #scorecard-section #scorecard-form .form-buttons, .page-template-results #scorecard-section #scorecard-form .form-buttons {
   margin: 0 auto;
