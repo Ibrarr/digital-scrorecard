@@ -1,6 +1,6 @@
 $primary-colour: #c402d1;
-$button-colour: #e9a2c0;
-$label-colour:#B4FEE7;
+$button-colour: #ff7f00;
+$label-colour:#00ffb8;
 
 body.page-template-scorecard, body.page-template-results {
     background-color: #000005;
@@ -80,7 +80,7 @@ body.page-template-scorecard, body.page-template-results {
                 align-items: center;
 
                 span {
-                    background: white;
+                    background: $label-colour;
                     border-radius: 100%;
                     color: black;
                     display: inline-block;

@@ -8,7 +8,7 @@ body.page-template-scorecard, body.page-template-results {
 .page-template-scorecard .results-buttons, .page-template-results .results-buttons {
   max-width: 270px;
   margin: 20px auto;
-  background-color: #e9a2c0;
+  background-color: #ff7f00;
   border-radius: 10px;
   color: #000005;
   font-weight: 700;
@@ -73,7 +73,7 @@ body.page-template-scorecard, body.page-template-results {
   align-items: center;
 }
 .page-template-scorecard .results-container .single-winner .winner-info span, .page-template-results .results-container .single-winner .winner-info span {
-  background: white;
+  background: #00ffb8;
   border-radius: 100%;
   color: black;
   display: inline-block;
@@ -131,7 +131,7 @@ body.page-template-scorecard, body.page-template-results {
   position: relative;
 }
 .page-template-scorecard #scorecard-section #scorecard-form .form-field label, .page-template-results #scorecard-section #scorecard-form .form-field label {
-  color: #B4FEE7;
+  color: #00ffb8;
   font-size: 1.1rem;
   display: inline-block;
   width: 100%;
@@ -344,13 +344,13 @@ body.page-template-scorecard, body.page-template-results {
   border-radius: 10px;
   font-size: 1rem;
   overflow: hidden;
-  border: 2px solid #e9a2c0;
-  background: #e9a2c0;
+  border: 2px solid #ff7f00;
+  background: #ff7f00;
 }
 .page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .minus, .page-template-scorecard #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .plus, .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .minus, .page-template-results #scorecard-section #scorecard-form .playerContainer .eachPlayer .putCounter .plus {
   cursor: pointer;
   padding: 10px;
-  background: #e9a2c0;
+  background: #ff7f00;
   color: black;
   font-weight: bold;
 }
@@ -377,7 +377,7 @@ body.page-template-scorecard, body.page-template-results {
   justify-content: space-between;
 }
 .page-template-scorecard #scorecard-section #scorecard-form .form-buttons button, .page-template-results #scorecard-section #scorecard-form .form-buttons button {
-  background-color: #e9a2c0;
+  background-color: #ff7f00;
   border-radius: 10px;
   color: #000005;
   font-weight: 700;
