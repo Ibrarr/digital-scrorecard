@@ -5,6 +5,23 @@ body.page-template-scorecard, body.page-template-results {
 .page-template-scorecard header, .page-template-scorecard footer, .page-template-results header, .page-template-results footer {
   display: none;
 }
+.page-template-scorecard .results-buttons, .page-template-results .results-buttons {
+  max-width: 270px;
+  margin: 20px auto;
+  background-color: #e9a2c0;
+  border-radius: 10px;
+  color: #000005;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Helvegan - Reg", Helvetica, Arial, Lucida, sans-serif !important;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .page-template-scorecard .results-container, .page-template-results .results-container {
   background: #000005;
   border: 2px solid white;
@@ -370,11 +387,6 @@ body.page-template-scorecard, body.page-template-results {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .page-template-scorecard #scorecard-section #scorecard-form .form-buttons button#nextBtn, .page-template-results #scorecard-section #scorecard-form .form-buttons button#nextBtn {
   float: right;

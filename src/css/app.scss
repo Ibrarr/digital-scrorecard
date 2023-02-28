@@ -1,4 +1,6 @@
 $primary-colour: #c402d1;
+$button-colour: #e9a2c0;
+$label-colour:#B4FEE7;
 
 body.page-template-scorecard, body.page-template-results {
     background-color: #000005;
@@ -9,6 +11,22 @@ body.page-template-scorecard, body.page-template-results {
     
     header, footer {
         display: none;
+    }
+
+    .results-buttons {
+        max-width: 270px;
+        margin: 20px auto;
+        background-color: $button-colour;
+        border-radius: 10px;
+        color: #000005;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-family: "Helvegan - Reg", Helvetica, Arial, Lucida, sans-serif !important;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        display: flex;
     }
 
     .results-container {
@@ -132,7 +150,7 @@ body.page-template-scorecard, body.page-template-results {
                 position: relative;
 
                 label {
-                    color: #B4FEE7;
+                    color: $label-colour;
                     font-size: 1.1rem;
                     display: inline-block;
                     width: 100%;
@@ -364,13 +382,13 @@ body.page-template-scorecard, body.page-template-results {
                         border-radius: 10px;
                         font-size: 1rem;
                         overflow: hidden;
-                        border: 2px solid #e9a2c0;
-                        background: #e9a2c0;
+                        border: 2px solid $button-colour;
+                        background: $button-colour;
     
                         .minus, .plus {
                             cursor: pointer;
                             padding: 10px;
-                            background: #e9a2c0;
+                            background: $button-colour;
                             color: black;
                             font-weight: bold;
                         }
@@ -400,7 +418,7 @@ body.page-template-scorecard, body.page-template-results {
                 justify-content: space-between;
                 
                 button {
-                    background-color: #e9a2c0;
+                    background-color: $button-colour;
                     border-radius: 10px;
                     color: #000005;
                     font-weight: 700;
@@ -410,9 +428,6 @@ body.page-template-scorecard, body.page-template-results {
                     padding: 10px 20px;
                     border: none;
                     cursor: pointer;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
 
                     &#nextBtn {
                         float: right;
