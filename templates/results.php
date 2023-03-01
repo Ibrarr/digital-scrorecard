@@ -98,7 +98,7 @@
             }
             ?>
         </div>
-        <button class="share-button results-buttons" data-url="<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]?gameid=$uniqid"; ?>">Share results</button>
+        <button class="share-button results-buttons" data-url="<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]?gameid=$uniqid"; ?>">Share results 🔗</button>
         <script>
             const shareButton = document.querySelector('.share-button');
 
@@ -114,7 +114,8 @@
                 }
             });
         </script>
-        <a href="/digital-scorecard"><button class="results-buttons">Play again!</button></a>
+        <a href="/digital-scorecard"><button class="results-buttons">Play again?</button></a>
+        <button class="results-buttons">Take a selfie?</button>
     <?php
     } else {
         $gameID = $_GET['gameid'];

@@ -1,6 +1,6 @@
 $primary-colour: #c402d1;
-$button-colour: #ff7f00;
-$label-colour:#00ffb8;
+$button-colour: #e9a2c0;
+$label-colour:#B4FEE7;
 
 body.page-template-scorecard, body.page-template-results {
     background-color: #000005;
@@ -27,6 +27,10 @@ body.page-template-scorecard, body.page-template-results {
         border: none;
         cursor: pointer;
         display: flex;
+
+        &.share-button {
+            background-color: $label-colour;
+        }
     }
 
     .results-container {
