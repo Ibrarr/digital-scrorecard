@@ -105,8 +105,7 @@
             shareButton.addEventListener('click', event => {
                 if (navigator.share) {
                     navigator.share({
-                            title: 'One Under results',
-                            text: 'Check out the game I just played at One Under mini golf!',
+                            title: 'Check out our Mini-Golf scores at One Under! & The winner is...',
                             url: shareButton.getAttribute('data-url')
                         })
                         .then(() => console.log('Successful share'))
@@ -116,89 +115,95 @@
         </script>
         <a href="/digital-scorecard"><button class="results-buttons">Play again?</button></a>
         <button class="results-buttons">Take a selfie?</button>
-    <?php
+        <?php
     } else {
         $gameID = $_GET['gameid'];
 
-        global $wpdb;
-        $table_name = $wpdb->prefix . "digital_scorecard";
-        $result = $wpdb->get_row("SELECT * FROM $table_name WHERE uniqid = '$gameID'");
+        if ($gameID) {
+            global $wpdb;
+            $table_name = $wpdb->prefix . "digital_scorecard";
+            $result = $wpdb->get_row("SELECT * FROM $table_name WHERE uniqid = '$gameID'");
 
-        $obj = json_decode($result->scores);
-        usort($obj->data, function ($a, $b) {
-            return $a->score < $b->score ? -1 : 1;
-        });
-    ?>
-        <div class="results-container">
-            <?php
-            $i = 0;
-            foreach ($obj->data as $player) {
-                $i++;
-                if ($i == 1) {
-            ?>
-                    <div class="single-winner">
-                        <div class="winner-position">
-                            <span>1st</span>
-                        </div>
-                        <div class="winner-info">
-                            <span><?php echo $player->score; ?></span>
-                            <p><?php echo $player->name; ?></p>
-                        </div>
-                    </div>
+            $obj = json_decode($result->scores);
+            usort($obj->data, function ($a, $b) {
+                return $a->score < $b->score ? -1 : 1;
+            });
+        ?>
+            <div class="results-container">
                 <?php
-                } elseif ($i == 2) {
+                $i = 0;
+                foreach ($obj->data as $player) {
+                    $i++;
+                    if ($i == 1) {
                 ?>
-                    <div class="single-winner">
-                        <div class="winner-position">
-                            <span>2nd</span>
+                        <div class="single-winner">
+                            <div class="winner-position">
+                                <span>1st</span>
+                            </div>
+                            <div class="winner-info">
+                                <span><?php echo $player->score; ?></span>
+                                <p><?php echo $player->name; ?></p>
+                            </div>
                         </div>
-                        <div class="winner-info">
-                            <span><?php echo $player->score; ?></span>
-                            <p><?php echo $player->name; ?></p>
+                    <?php
+                    } elseif ($i == 2) {
+                    ?>
+                        <div class="single-winner">
+                            <div class="winner-position">
+                                <span>2nd</span>
+                            </div>
+                            <div class="winner-info">
+                                <span><?php echo $player->score; ?></span>
+                                <p><?php echo $player->name; ?></p>
+                            </div>
                         </div>
-                    </div>
+                    <?php
+                    } elseif ($i == 3) {
+                    ?>
+                        <div class="single-winner">
+                            <div class="winner-position">
+                                <span>3rd</span>
+                            </div>
+                            <div class="winner-info">
+                                <span><?php echo $player->score; ?></span>
+                                <p><?php echo $player->name; ?></p>
+                            </div>
+                        </div>
+                    <?php
+                    } elseif ($i == 4) {
+                    ?>
+                        <div class="single-winner">
+                            <div class="winner-position">
+                                <span>4th</span>
+                            </div>
+                            <div class="winner-info">
+                                <span><?php echo $player->score; ?></span>
+                                <p><?php echo $player->name; ?></p>
+                            </div>
+                        </div>
+                    <?php
+                    } elseif ($i == 5) {
+                    ?>
+                        <div class="single-winner">
+                            <div class="winner-position">
+                                <span>5th</span>
+                            </div>
+                            <div class="winner-info">
+                                <span><?php echo $player->score; ?></span>
+                                <p><?php echo $player->name; ?></p>
+                            </div>
+                        </div>
                 <?php
-                } elseif ($i == 3) {
-                ?>
-                    <div class="single-winner">
-                        <div class="winner-position">
-                            <span>3rd</span>
-                        </div>
-                        <div class="winner-info">
-                            <span><?php echo $player->score; ?></span>
-                            <p><?php echo $player->name; ?></p>
-                        </div>
-                    </div>
-                <?php
-                } elseif ($i == 4) {
-                ?>
-                    <div class="single-winner">
-                        <div class="winner-position">
-                            <span>4th</span>
-                        </div>
-                        <div class="winner-info">
-                            <span><?php echo $player->score; ?></span>
-                            <p><?php echo $player->name; ?></p>
-                        </div>
-                    </div>
-                <?php
-                } elseif ($i == 5) {
-                ?>
-                    <div class="single-winner">
-                        <div class="winner-position">
-                            <span>5th</span>
-                        </div>
-                        <div class="winner-info">
-                            <span><?php echo $player->score; ?></span>
-                            <p><?php echo $player->name; ?></p>
-                        </div>
-                    </div>
-            <?php
+                    }
                 }
-            }
-            ?>
-        </div>
+                ?>
+            </div>
+        <?php
+        } else {
+        ?>
+            <a href="/digital-scorecard"><button class="results-buttons">Play now!</button></a>
     <?php
+        }
     }
     ?>
 </section>
