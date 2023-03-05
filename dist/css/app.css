@@ -65,8 +65,22 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
 .page-template-scorecard .take-picture button.visible, .page-template-results .take-picture button.visible, .page-template-selfie .take-picture button.visible {
   display: block;
 }
-.page-template-scorecard .take-picture button.take-picture__save-camera.button.visible, .page-template-results .take-picture button.take-picture__save-camera.button.visible, .page-template-selfie .take-picture button.take-picture__save-camera.button.visible {
+.page-template-scorecard .take-picture button.take-picture__restart-camera.visible, .page-template-results .take-picture button.take-picture__restart-camera.visible, .page-template-selfie .take-picture button.take-picture__restart-camera.visible {
   bottom: 70px;
+}
+.page-template-scorecard .take-picture .share-text, .page-template-results .take-picture .share-text, .page-template-selfie .take-picture .share-text {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-family: "Helvegan - Inky", Helvetica, Arial, Lucida, sans-serif;
+  text-shadow: 0 0 20px black, 0 0 20px black, 0 0 20px black;
+}
+.page-template-scorecard .take-picture .share-text.visible, .page-template-results .take-picture .share-text.visible, .page-template-selfie .take-picture .share-text.visible {
+  display: block;
 }
 .page-template-scorecard .results-buttons, .page-template-results .results-buttons, .page-template-selfie .results-buttons {
   max-width: 270px;

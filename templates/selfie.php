@@ -15,12 +15,13 @@
         <button class="take-picture__pause-camera button">
             Capture!
         </button>
-        <button class="take-picture__save-camera button">
-            I like it, save it!
-        </button>
         <button class="take-picture__restart-camera button">
             Nah take it again!
         </button>
+        <button class="take-picture__save-camera button">
+            I like it, save it!
+        </button>
+        <p class="share-text">Don’t forget to tag us at @oneunderglasgow on Instagram/Facebook!</p>
         <a href="/digital-scorecard/">
             <button class="take-picture__play-again button">
                 Play Again!

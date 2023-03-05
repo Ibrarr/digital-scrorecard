@@ -369,6 +369,7 @@ $(function () {
     var saveButton = document.querySelector(".take-picture__save-camera");
     var restartButton = document.querySelector(".take-picture__restart-camera");
     var playAgain = document.querySelector(".take-picture__play-again");
+    var shareText = document.querySelector(".share-text");
     var video = document.querySelector("video");
     cameraButton.addEventListener("click", function () {
       askPermission();
@@ -420,6 +421,7 @@ $(function () {
       saveButton.classList.remove("visible");
       restartButton.classList.remove("visible");
       playAgain.classList.add("visible");
+      shareText.classList.add("visible");
       var canvas = document.getElementById("canvas");
       var video = document.querySelector('video');
       canvas.width = video.videoWidth;

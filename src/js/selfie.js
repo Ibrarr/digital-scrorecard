@@ -6,6 +6,7 @@ $(function(){
     const saveButton = document.querySelector(".take-picture__save-camera");
     const restartButton = document.querySelector(".take-picture__restart-camera");
     const playAgain = document.querySelector(".take-picture__play-again");
+    const shareText = document.querySelector(".share-text");
     const video = document.querySelector("video");
     
     cameraButton.addEventListener("click", () => {
@@ -63,6 +64,7 @@ $(function(){
       saveButton.classList.remove("visible");
       restartButton.classList.remove("visible");
       playAgain.classList.add("visible");
+      shareText.classList.add("visible");
       
       const canvas = document.getElementById("canvas");
       const video = document.querySelector('video');

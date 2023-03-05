@@ -72,8 +72,23 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
             &.visible {
               display: block;
             }
-            &.take-picture__save-camera.button.visible {
+            &.take-picture__restart-camera.visible {
                 bottom: 70px;
+            }
+        }
+
+        .share-text {
+            display: none;
+            z-index: 1;
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-family: "Helvegan - Inky", Helvetica, Arial, Lucida, sans-serif;
+            text-shadow: 0 0 20px black, 0 0 20px black, 0 0 20px black;
+            &.visible {
+                display: block;
             }
         }
     }
