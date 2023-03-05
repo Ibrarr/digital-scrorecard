@@ -65,12 +65,10 @@ $(function(){
       playAgain.classList.add("visible");
       
       const canvas = document.getElementById("canvas");
-      const context = canvas.getContext("2d");
-      const boundingVideo = video.getBoundingClientRect();
-      canvas.width = boundingVideo.width;
-      canvas.height = boundingVideo.height;
-      //   Print video on canvas to make it saveable
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      const video = document.querySelector('video');
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      canvas.getContext('2d').drawImage(video, 0, 0);
       const link = document.createElement('a');
       link.download = 'download.png';
       link.href = canvas.toDataURL();

@@ -421,12 +421,10 @@ $(function () {
       restartButton.classList.remove("visible");
       playAgain.classList.add("visible");
       var canvas = document.getElementById("canvas");
-      var context = canvas.getContext("2d");
-      var boundingVideo = video.getBoundingClientRect();
-      canvas.width = boundingVideo.width;
-      canvas.height = boundingVideo.height;
-      //   Print video on canvas to make it saveable
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+      var video = document.querySelector('video');
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      canvas.getContext('2d').drawImage(video, 0, 0);
       var link = document.createElement('a');
       link.download = 'download.png';
       link.href = canvas.toDataURL();
