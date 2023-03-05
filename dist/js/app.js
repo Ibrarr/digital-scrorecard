@@ -123,6 +123,12 @@ $(function () {
   \************************/
 /***/ (() => {
 
+var appHeight = function appHeight() {
+  var doc = document.documentElement;
+  doc.style.setProperty('--app-height', "".concat(window.innerHeight, "px"));
+};
+window.addEventListener('resize', appHeight);
+appHeight();
 $(function () {
   if ($('body').is('.page-template-scorecard')) {
     var showTab = function showTab(n) {
