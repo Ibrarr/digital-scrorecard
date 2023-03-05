@@ -34,6 +34,7 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
             object-fit: cover;
             object-position: center center;
             display: block;
+            transform: scaleX(-1) translateX(50%);
         }
 
         .take-picture__video {
@@ -46,6 +47,7 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
             object-fit: cover;
             object-position: center center;
             display: block;
+            transform: scaleX(-1) translateX(50%);
         }
 
         button {
