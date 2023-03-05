@@ -11,7 +11,7 @@ class EnqueueScripts
 
     public function enqueue_scripts()
     {
-        if (is_page_template('templates/scorecard.php') || is_page_template('templates/results.php')) {
+        if (is_page_template('templates/scorecard.php') || is_page_template('templates/results.php') || is_page_template('templates/selfie.php')) {
             $my_css_ver  = date("ymd-Gis", filemtime(plugin_dir_path(dirname(__FILE__)) . '/dist/css/app.css'));
             $my_js_ver = date("ymd-Gis", filemtime(plugin_dir_path(dirname(__FILE__)) . 'dist/js/app.js'));
 

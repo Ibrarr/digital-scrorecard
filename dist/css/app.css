@@ -5,6 +5,63 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
 .page-template-scorecard header, .page-template-scorecard footer, .page-template-results header, .page-template-results footer, .page-template-selfie header, .page-template-selfie footer {
   display: none;
 }
+.page-template-scorecard .take-picture, .page-template-results .take-picture, .page-template-selfie .take-picture {
+  max-width: 270px;
+  margin: 20px auto;
+  text-align: center;
+}
+.page-template-scorecard .take-picture .take-picture__canvas, .page-template-results .take-picture .take-picture__canvas, .page-template-selfie .take-picture .take-picture__canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
+  display: block;
+}
+.page-template-scorecard .take-picture .take-picture__video, .page-template-results .take-picture .take-picture__video, .page-template-selfie .take-picture .take-picture__video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
+  display: block;
+}
+.page-template-scorecard .take-picture button, .page-template-results .take-picture button, .page-template-selfie .take-picture button {
+  max-width: 270px;
+  margin: 10px auto;
+  background-color: #e9a2c0;
+  border-radius: 10px;
+  color: #000005;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Helvegan - Reg", Helvetica, Arial, Lucida, sans-serif !important;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  z-index: 1;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.page-template-scorecard .take-picture button.visible, .page-template-results .take-picture button.visible, .page-template-selfie .take-picture button.visible {
+  display: block;
+}
+.page-template-scorecard .take-picture button.take-picture__save-camera.button.visible, .page-template-results .take-picture button.take-picture__save-camera.button.visible, .page-template-selfie .take-picture button.take-picture__save-camera.button.visible {
+  bottom: 70px;
+}
 .page-template-scorecard .results-buttons, .page-template-results .results-buttons, .page-template-selfie .results-buttons {
   max-width: 270px;
   margin: 20px auto;

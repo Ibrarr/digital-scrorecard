@@ -99,22 +99,8 @@
             ?>
         </div>
         <button class="share-button results-buttons" data-url="<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]?gameid=$uniqid"; ?>">Share results 🔗</button>
-        <script>
-            const shareButton = document.querySelector('.share-button');
-
-            shareButton.addEventListener('click', event => {
-                if (navigator.share) {
-                    navigator.share({
-                            title: 'Check out our Mini-Golf scores at One Under! & The winner is...',
-                            url: shareButton.getAttribute('data-url')
-                        })
-                        .then(() => console.log('Successful share'))
-                        .catch((error) => console.log('Error sharing', error));
-                }
-            });
-        </script>
         <a href="/digital-scorecard"><button class="results-buttons">Play again?</button></a>
-        <button class="results-buttons">Take a selfie?</button>
+        <a href="/digital-scorecard/selfie"><button class="results-buttons">Take a selfie?</button></a>
         <?php
     } else {
         $gameID = $_GET['gameid'];
