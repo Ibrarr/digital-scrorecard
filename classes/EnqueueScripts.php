@@ -18,6 +18,9 @@ class EnqueueScripts
             wp_register_style('scorecard-style', plugin_dir_url(dirname(__FILE__)) . 'dist/css/app.css', [], $my_css_ver, 'all');
             wp_enqueue_style('scorecard-style');
 
+            wp_register_style('font-awesome', 'https://use.fontawesome.com/releases/v5.13.0/css/all.css', [], '', 'all');
+            wp_enqueue_style('font-awesome');
+
             wp_register_script('scorecard-script', plugin_dir_url(dirname(__FILE__)) . 'dist/js/app.js', ['jquery'], $my_js_ver, true);
             wp_enqueue_script('scorecard-script');
         }

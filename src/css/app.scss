@@ -95,7 +95,7 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
 
     .results-buttons {
         max-width: $container-width;
-        margin: 20px auto;
+        margin: 0px auto 20px auto;
         background-color: $button-colour;
         border-radius: 10px;
         color: #000005;
@@ -103,13 +103,29 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
         text-transform: uppercase;
         font-family: "Helvegan - Reg", Helvetica, Arial, Lucida, sans-serif !important;
         font-size: 1.2rem;
-        padding: 10px 20px;
+        padding: 10px;
         border: none;
         cursor: pointer;
         display: flex;
+        justify-content: center;
 
         &.share-button {
             background-color: $label-colour;
+            width: $container-width;
+        }
+    }
+
+    .winner-message {
+        text-align: center;
+        font-family: "Helvegan - Inky", Helvetica, Arial, Lucida, sans-serif;
+        max-width: $container-width;
+        padding-bottom: 15px !important;
+        margin: auto;
+        color: white;
+
+        span {
+            color: $label-colour;
+            font-weight: bold;
         }
     }
 
@@ -181,6 +197,66 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
                 }
 
             }
+        }
+    }
+
+    .rating { 
+        max-width: $container-width;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: row-reverse;
+    }
+
+    .rating > input { display: none; } 
+    .rating > label:before { 
+        margin: 5px;
+        font-size: 1.25em;
+        font-family: 'Font Awesome 5 Free';
+        display: inline-block;
+        content: "\f005";
+    }
+
+    .rating > .half:before { 
+        content: "\f089";
+        position: absolute;
+    }
+
+    .rating > label { 
+        color: #ddd; 
+        float: right; 
+    }
+            
+    .rating > input:checked ~ label, /* show gold star when clicked */
+    .rating:not(:checked) > label:hover, /* hover current star */
+    .rating:not(:checked) > label:hover ~ label { color: #FFD700; font-weight: 900;  } /* hover previous stars in list */
+    
+    .rating > input:checked + label:hover, /* hover current star when changing rating */
+    .rating > input:checked ~ label:hover,
+    .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+    .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
+    .google-review {
+        max-width: 270px;
+        padding-bottom: 15px !important;
+        margin: auto;
+        color: white;
+        font-family: "Helvegan - Inky", Helvetica, Arial, Lucida, sans-serif;
+        text-align: center;
+        display: none;
+    }
+
+    .results-buttons-container {
+        display: flex;
+        justify-content: space-evenly;
+        max-width: $container-width;
+        gap: 20px;
+        margin: auto;
+
+        button {
+            margin-top: 0;
         }
     }
 

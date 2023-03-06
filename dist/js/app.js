@@ -454,6 +454,12 @@ $(function () {
 
 $(function () {
   if ($('body').is('.page-template-results')) {
+    var checkRadios = function checkRadios() {
+      if (radio1.checked || radio2.checked) {
+        document.querySelector(".google-review").style.display = "block";
+        console.log('working');
+      }
+    };
     var shareButton = document.querySelector('.share-button');
     shareButton.addEventListener('click', function (event) {
       if (navigator.share) {
@@ -467,6 +473,10 @@ $(function () {
         });
       }
     });
+    var radio1 = document.getElementById("star5");
+    var radio2 = document.getElementById("star4");
+    radio1.addEventListener("click", checkRadios);
+    radio2.addEventListener("click", checkRadios);
   }
 });
 

@@ -6,6 +6,7 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
   background-color: #000005;
 }
 
+.page-template-scorecard, .page-template-results, .page-template-selfie { /* hover previous stars in list */ }
 .page-template-scorecard header, .page-template-scorecard footer, .page-template-results header, .page-template-results footer, .page-template-selfie header, .page-template-selfie footer {
   display: none;
 }
@@ -84,7 +85,7 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
 }
 .page-template-scorecard .results-buttons, .page-template-results .results-buttons, .page-template-selfie .results-buttons {
   max-width: 270px;
-  margin: 20px auto;
+  margin: 0px auto 20px auto;
   background-color: #e9a2c0;
   border-radius: 10px;
   color: #000005;
@@ -92,15 +93,29 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
   text-transform: uppercase;
   font-family: "Helvegan - Reg", Helvetica, Arial, Lucida, sans-serif !important;
   font-size: 1.2rem;
-  padding: 10px 20px;
+  padding: 10px;
   border: none;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-content: center;
 }
 .page-template-scorecard .results-buttons.share-button, .page-template-results .results-buttons.share-button, .page-template-selfie .results-buttons.share-button {
   background-color: #B4FEE7;
+  width: 270px;
+}
+.page-template-scorecard .winner-message, .page-template-results .winner-message, .page-template-selfie .winner-message {
+  text-align: center;
+  font-family: "Helvegan - Inky", Helvetica, Arial, Lucida, sans-serif;
+  max-width: 270px;
+  padding-bottom: 15px !important;
+  margin: auto;
+  color: white;
+}
+.page-template-scorecard .winner-message span, .page-template-results .winner-message span, .page-template-selfie .winner-message span {
+  color: #B4FEE7;
+  font-weight: bold;
 }
 .page-template-scorecard .results-container, .page-template-results .results-container, .page-template-selfie .results-container {
   background: #000005;
@@ -166,6 +181,78 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
 }
 .page-template-scorecard .results-container .single-winner .winner-info p, .page-template-results .results-container .single-winner .winner-info p, .page-template-selfie .results-container .single-winner .winner-info p {
   font-size: 20px;
+}
+.page-template-scorecard .rating, .page-template-results .rating, .page-template-selfie .rating {
+  max-width: 270px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+.page-template-scorecard .rating > input, .page-template-results .rating > input, .page-template-selfie .rating > input {
+  display: none;
+}
+.page-template-scorecard .rating > label:before, .page-template-results .rating > label:before, .page-template-selfie .rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  content: "\f005";
+}
+.page-template-scorecard .rating > .half:before, .page-template-results .rating > .half:before, .page-template-selfie .rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+.page-template-scorecard .rating > label, .page-template-results .rating > label, .page-template-selfie .rating > label {
+  color: #ddd;
+  float: right;
+}
+.page-template-scorecard .rating > input:checked ~ label,
+.page-template-scorecard .rating:not(:checked) > label:hover,
+.page-template-scorecard .rating:not(:checked) > label:hover ~ label, .page-template-results .rating > input:checked ~ label,
+.page-template-results .rating:not(:checked) > label:hover,
+.page-template-results .rating:not(:checked) > label:hover ~ label, .page-template-selfie .rating > input:checked ~ label,
+.page-template-selfie .rating:not(:checked) > label:hover,
+.page-template-selfie .rating:not(:checked) > label:hover ~ label {
+  color: #FFD700;
+  font-weight: 900;
+}
+.page-template-scorecard .rating > input:checked + label:hover,
+.page-template-scorecard .rating > input:checked ~ label:hover,
+.page-template-scorecard .rating > label:hover ~ input:checked ~ label,
+.page-template-scorecard .rating > input:checked ~ label:hover ~ label, .page-template-results .rating > input:checked + label:hover,
+.page-template-results .rating > input:checked ~ label:hover,
+.page-template-results .rating > label:hover ~ input:checked ~ label,
+.page-template-results .rating > input:checked ~ label:hover ~ label, .page-template-selfie .rating > input:checked + label:hover,
+.page-template-selfie .rating > input:checked ~ label:hover,
+.page-template-selfie .rating > label:hover ~ input:checked ~ label,
+.page-template-selfie .rating > input:checked ~ label:hover ~ label {
+  color: #FFED85;
+}
+.page-template-scorecard .google-review, .page-template-results .google-review, .page-template-selfie .google-review {
+  max-width: 270px;
+  padding-bottom: 15px !important;
+  margin: auto;
+  color: white;
+  font-family: "Helvegan - Inky", Helvetica, Arial, Lucida, sans-serif;
+  text-align: center;
+  display: none;
+}
+.page-template-scorecard .results-buttons-container, .page-template-results .results-buttons-container, .page-template-selfie .results-buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 270px;
+  gap: 20px;
+  margin: auto;
+}
+.page-template-scorecard .results-buttons-container button, .page-template-results .results-buttons-container button, .page-template-selfie .results-buttons-container button {
+  margin-top: 0;
 }
 .page-template-scorecard #scorecard-section, .page-template-results #scorecard-section, .page-template-selfie #scorecard-section {
   background: url(http://oneunder.co.uk/wp-content/uploads/2023/02/bg.png);

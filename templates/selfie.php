@@ -10,7 +10,7 @@
             <video playsinline class="take-picture__video" autoplay></video>
         </div>
         <button class="take-picture__start-camera button visible">
-            Start camera
+            Take a selfie!
         </button>
         <button class="take-picture__pause-camera button">
             Capture!
