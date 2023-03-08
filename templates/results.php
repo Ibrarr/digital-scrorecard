@@ -106,7 +106,9 @@
             <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2"></label>
             <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1"></label>
         </fieldset>
-        <p class="google-review">Thank you for the rave review - it goes a long way! Help other adventurers find us by leaving us a review on Google too</p>
+        <p class="google-review">Thank you for the rave review - it goes a long way! Help other adventurers find us by leaving us a review on Google too
+            <a href="https://g.page/r/CQCwUDyE-M-bEB0/review" target="_blank"><button class="results-buttons">Leave review!</button></a>
+        </p>
         <button class="share-button results-buttons" data-url="<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]?gameid=$uniqid"; ?>">Share results 🔗</button>
         <div class="results-buttons-container">
             <a href="/digital-scorecard"><button class="results-buttons">Play again?</button></a>

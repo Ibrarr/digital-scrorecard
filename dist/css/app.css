@@ -6,7 +6,6 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
   background-color: #000005;
 }
 
-.page-template-scorecard, .page-template-results, .page-template-selfie { /* hover previous stars in list */ }
 .page-template-scorecard header, .page-template-scorecard footer, .page-template-results header, .page-template-results footer, .page-template-selfie header, .page-template-selfie footer {
   display: none;
 }
@@ -51,7 +50,7 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
   color: #000005;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: "Helvegan - Reg", Helvetica, Arial, Lucida, sans-serif !important;
+  font-family: "Helvegan - Reg", Helvetica, Arial, Lucida, sans-serif;
   font-size: 1.2rem;
   padding: 10px 20px;
   border: none;
@@ -91,7 +90,7 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
   color: #000005;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: "Helvegan - Reg", Helvetica, Arial, Lucida, sans-serif !important;
+  font-family: "Helvegan - Reg", Helvetica, Arial, Lucida, sans-serif;
   font-size: 1.2rem;
   padding: 10px;
   border: none;
@@ -241,6 +240,9 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
   font-family: "Helvegan - Inky", Helvetica, Arial, Lucida, sans-serif;
   text-align: center;
   display: none;
+}
+.page-template-scorecard .google-review .results-buttons, .page-template-results .google-review .results-buttons, .page-template-selfie .google-review .results-buttons {
+  margin: 10px auto 0 auto;
 }
 .page-template-scorecard .results-buttons-container, .page-template-results .results-buttons-container, .page-template-selfie .results-buttons-container {
   display: -webkit-box;
