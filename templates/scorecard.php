@@ -1,5 +1,11 @@
 <?php get_header(); ?>
 
+<div class="popup-container">
+    <div id="hole-in-one">Hole in one!</div>
+    <div id="hole-in-two">Hole in two!</div>
+    <div id="hole-in-six">Hole in six!</div>
+</div>
+
 <section id="scorecard-section">
     <div class="header-logo"><img src="<?php echo plugin_dir_url(dirname(__FILE__)) . 'src/images/One-Under-Logo.png' ?>"></div>
 

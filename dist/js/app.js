@@ -151,8 +151,14 @@ $(function () {
         document.getElementById("nextBtn").innerHTML = "Let's Golf!";
         createNameInputsHoles(selectedCourse);
       } else if (n === 3) {
+        document.getElementById("nextBtn").addEventListener("click", function () {
+          popup();
+        }, false);
         document.getElementById("nextBtn").innerHTML = "Next Hole";
       } else if (n > 3) {
+        document.getElementById("nextBtn").addEventListener("click", function () {
+          popup();
+        }, false);
         document.getElementById("nextBtn").innerHTML = "Next Hole";
       }
       if (n == x.length - 1) {
@@ -300,8 +306,43 @@ $(function () {
         };
       }
       data['data'] = scoresArray;
-      console.log(data);
       document.querySelector('#gameScores').value = JSON.stringify(data);
+    };
+    var popup = function popup() {
+      getTheHoleTab = currentTab - 3;
+      var currentHoleTab = document.querySelector('#holeTabContainer .hole' + getTheHoleTab + '');
+      var players = currentHoleTab.querySelector('.playerContainer').getElementsByTagName('input');
+      var playerNamesOne = [];
+      var playerNamesTwo = [];
+      var playerNamesSix = [];
+      for (i = 0; i < players.length; i++) {
+        var playerName = players[i].getAttribute("name");
+        var numInputs = currentHoleTab.querySelectorAll("input[name=\"".concat(playerName, "\"]"));
+        for (var j = 0; j < numInputs.length; j++) {
+          playerValue = parseInt(numInputs[j].value);
+          if (playerValue === 1) {
+            playerNamesOne.push(playerName);
+          }
+          if (playerValue === 2) {
+            playerNamesTwo.push(playerName);
+          }
+          if (playerValue === 6) {
+            playerNamesSix.push(playerName);
+          }
+        }
+      }
+      if (playerNamesOne.length > 0) {
+        var playerNamesOneString = playerNamesOne.join(", ");
+        document.getElementById("hole-in-one").innerHTML = "HOLE-IN-ONE - you’ve got some game " + playerNamesOneString + "!";
+      }
+      if (playerNamesTwo.length > 0) {
+        var playerNamesTwoString = playerNamesTwo.join(", ");
+        document.getElementById("hole-in-two").innerHTML = "You’re getting good at this " + playerNamesTwoString + "!";
+      }
+      if (playerNamesSix.length > 0) {
+        var playerNamesSixString = playerNamesSix.join(", ");
+        document.getElementById("hole-in-six").innerHTML = "Ouch! Better luck on the next hole " + playerNamesSixString + "!";
+      }
     };
     var currentTab = 0;
     showTab(currentTab);
@@ -318,6 +359,39 @@ $(function () {
           $('.form-field input[type="checkbox"]').removeClass("invalid");
         } else $(this).val('');
       });
+    });
+    var holeInOnePopup = document.getElementById('hole-in-one');
+    var holeInOnePopupObserver = new MutationObserver(function () {
+      var notification = document.getElementById('hole-in-one');
+      $(notification).slideDown();
+      setTimeout(function () {
+        $(notification).slideUp();
+      }, 4000);
+    });
+    holeInOnePopupObserver.observe(holeInOnePopup, {
+      childList: true
+    });
+    var holeInTwoPopup = document.getElementById('hole-in-two');
+    var holeInTwoPopupObserver = new MutationObserver(function () {
+      var notification = document.getElementById('hole-in-two');
+      $(notification).slideDown();
+      setTimeout(function () {
+        $(notification).slideUp();
+      }, 4000);
+    });
+    holeInTwoPopupObserver.observe(holeInTwoPopup, {
+      childList: true
+    });
+    var holeInSixPopup = document.getElementById('hole-in-six');
+    var holeInSixPopupObserver = new MutationObserver(function () {
+      var notification = document.getElementById('hole-in-six');
+      $(notification).slideDown();
+      setTimeout(function () {
+        $(notification).slideUp();
+      }, 4000);
+    });
+    holeInSixPopupObserver.observe(holeInSixPopup, {
+      childList: true
     });
   }
 });
