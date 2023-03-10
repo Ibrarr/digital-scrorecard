@@ -39,10 +39,12 @@
             ?>
                     <div class="single-winner">
                         <div class="winner-position">
-                            <span>1st</span>
+                            <p>1st</p>
                         </div>
                         <div class="winner-info">
-                            <span><?php echo $player->score; ?></span>
+                            <span>
+                                <p><?php echo $player->score; ?></p>
+                            </span>
                             <p><?php echo $player->name; ?></p>
                         </div>
                     </div>
@@ -51,10 +53,12 @@
                 ?>
                     <div class="single-winner">
                         <div class="winner-position">
-                            <span>2nd</span>
+                            <p>2nd</p>
                         </div>
                         <div class="winner-info">
-                            <span><?php echo $player->score; ?></span>
+                            <span>
+                                <p><?php echo $player->score; ?></p>
+                            </span>
                             <p><?php echo $player->name; ?></p>
                         </div>
                     </div>
@@ -63,10 +67,12 @@
                 ?>
                     <div class="single-winner">
                         <div class="winner-position">
-                            <span>3rd</span>
+                            <p>3rd</p>
                         </div>
                         <div class="winner-info">
-                            <span><?php echo $player->score; ?></span>
+                            <span>
+                                <p><?php echo $player->score; ?></p>
+                            </span>
                             <p><?php echo $player->name; ?></p>
                         </div>
                     </div>
@@ -75,10 +81,12 @@
                 ?>
                     <div class="single-winner">
                         <div class="winner-position">
-                            <span>4th</span>
+                            <p>4th</p>
                         </div>
                         <div class="winner-info">
-                            <span><?php echo $player->score; ?></span>
+                            <span>
+                                <p><?php echo $player->score; ?></p>
+                            </span>
                             <p><?php echo $player->name; ?></p>
                         </div>
                     </div>
@@ -87,10 +95,12 @@
                 ?>
                     <div class="single-winner">
                         <div class="winner-position">
-                            <span>5th</span>
+                            <p>5th</p>
                         </div>
                         <div class="winner-info">
-                            <span><?php echo $player->score; ?></span>
+                            <span>
+                                <p><?php echo $player->score; ?></p>
+                            </span>
                             <p><?php echo $player->name; ?></p>
                         </div>
                     </div>
@@ -137,10 +147,12 @@
                 ?>
                         <div class="single-winner">
                             <div class="winner-position">
-                                <span>1st</span>
+                                <p>1st</p>
                             </div>
                             <div class="winner-info">
-                                <span><?php echo $player->score; ?></span>
+                                <span>
+                                    <p><?php echo $player->score; ?></p>
+                                </span>
                                 <p><?php echo $player->name; ?></p>
                             </div>
                         </div>
@@ -149,10 +161,12 @@
                     ?>
                         <div class="single-winner">
                             <div class="winner-position">
-                                <span>2nd</span>
+                                <p>2nd</p>
                             </div>
                             <div class="winner-info">
-                                <span><?php echo $player->score; ?></span>
+                                <span>
+                                    <p><?php echo $player->score; ?></p>
+                                </span>
                                 <p><?php echo $player->name; ?></p>
                             </div>
                         </div>
@@ -161,10 +175,12 @@
                     ?>
                         <div class="single-winner">
                             <div class="winner-position">
-                                <span>3rd</span>
+                                <p>3rd</p>
                             </div>
                             <div class="winner-info">
-                                <span><?php echo $player->score; ?></span>
+                                <span>
+                                    <p><?php echo $player->score; ?></p>
+                                </span>
                                 <p><?php echo $player->name; ?></p>
                             </div>
                         </div>
@@ -173,10 +189,12 @@
                     ?>
                         <div class="single-winner">
                             <div class="winner-position">
-                                <span>4th</span>
+                                <p>4th</p>
                             </div>
                             <div class="winner-info">
-                                <span><?php echo $player->score; ?></span>
+                                <span>
+                                    <p><?php echo $player->score; ?></p>
+                                </span>
                                 <p><?php echo $player->name; ?></p>
                             </div>
                         </div>
@@ -185,10 +203,12 @@
                     ?>
                         <div class="single-winner">
                             <div class="winner-position">
-                                <span>5th</span>
+                                <p>5th</p>
                             </div>
                             <div class="winner-info">
-                                <span><?php echo $player->score; ?></span>
+                                <span>
+                                    <p><?php echo $player->score; ?></p>
+                                </span>
                                 <p><?php echo $player->name; ?></p>
                             </div>
                         </div>

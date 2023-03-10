@@ -129,6 +129,9 @@ var appHeight = function appHeight() {
 };
 window.addEventListener('resize', appHeight);
 appHeight();
+$(document).ready(function () {
+  document.getElementsByTagName("html")[0].style.visibility = "visible";
+});
 $(function () {
   if ($('body').is('.page-template-scorecard')) {
     var showTab = function showTab(n) {
@@ -534,6 +537,18 @@ $(function () {
         console.log('working');
       }
     };
+    var userAgent = window.navigator.userAgent.toLowerCase(),
+      macosPlatforms = /(macintosh|macintel|macppc|mac68k|macos)/i,
+      windowsPlatforms = /(win32|win64|windows|wince)/i,
+      iosPlatforms = /(iphone|ipad|ipod)/i,
+      os = null;
+    if (macosPlatforms.test(userAgent)) {
+      $(".page-template-results .results-container .single-winner .winner-info p").css("margin-top", "2.5px");
+      $(".page-template-results .results-container .single-winner .winner-position p").css("margin-top", "2.5px");
+    } else if (iosPlatforms.test(userAgent)) {
+      $(".page-template-results .results-container .single-winner .winner-info p").css("margin-top", "2.5px");
+      $(".page-template-results .results-container .single-winner .winner-position p").css("margin-top", "2.5px");
+    }
     var shareButton = document.querySelector('.share-button');
     shareButton.addEventListener('click', function (event) {
       if (navigator.share) {

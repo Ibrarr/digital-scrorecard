@@ -2,6 +2,10 @@
   --app-height: 100%;
 }
 
+html {
+  visibility: hidden;
+}
+
 body.page-template-scorecard, body.page-template-results, body.page-template-selfie {
   background-color: #000005;
 }
@@ -168,7 +172,7 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
   top: 4px;
   margin-right: 15px;
 }
-.page-template-scorecard .results-container .single-winner .winner-position span, .page-template-results .results-container .single-winner .winner-position span, .page-template-selfie .results-container .single-winner .winner-position span {
+.page-template-scorecard .results-container .single-winner .winner-position p, .page-template-results .results-container .single-winner .winner-position p, .page-template-selfie .results-container .single-winner .winner-position p {
   width: 40px;
   height: 42px;
   display: -webkit-box;
@@ -202,7 +206,7 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
   line-height: 35px;
 }
 .page-template-scorecard .results-container .single-winner .winner-info p, .page-template-results .results-container .single-winner .winner-info p, .page-template-selfie .results-container .single-winner .winner-info p {
-  font-size: 20px;
+  font-family: "Helvegan - Inky", Helvetica, Arial, Lucida, sans-serif;
 }
 .page-template-scorecard .rating, .page-template-results .rating, .page-template-selfie .rating {
   max-width: 270px;

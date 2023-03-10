@@ -5,6 +5,10 @@ const appHeight = () => {
 window.addEventListener('resize', appHeight)
 appHeight()
 
+$(document).ready(function() {
+    document.getElementsByTagName("html")[0].style.visibility = "visible";
+});
+
 $(function(){
     if($('body').is('.page-template-scorecard')){
 
