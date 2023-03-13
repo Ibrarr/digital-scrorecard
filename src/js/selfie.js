@@ -8,6 +8,8 @@ $(function(){
     const playAgain = document.querySelector(".take-picture__play-again");
     const shareText = document.querySelector(".share-text");
     const video = document.querySelector("video");
+    const selfieOverlay = document.querySelector(".selfie-overlay");
+    const canvasDiv = document.querySelector(".take-picture__canvas");
     
     cameraButton.addEventListener("click", () => {
       askPermission();
@@ -60,30 +62,51 @@ $(function(){
       saveButton.classList.add("visible");
       restartButton.classList.add("visible");
     };
+
     const save = function() {
       saveButton.classList.remove("visible");
       restartButton.classList.remove("visible");
+      selfieOverlay.classList.remove("visible");
       playAgain.classList.add("visible");
       shareText.classList.add("visible");
-      
+      canvasDiv.style.transform = "translateX(-50%)";
+
+    
       const canvas = document.getElementById("canvas");
       const video = document.querySelector('video');
+      const context = canvas.getContext('2d');
+      
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
-      canvas.getContext('2d').drawImage(video, 0, 0);
-      const link = document.createElement('a');
-      link.download = 'download.png';
-      link.href = canvas.toDataURL();
-      link.click();
-      link.delete;
-      //   Stop the camera:
-      setTimeout(() => {
-        const videoTracks = video.srcObject.getTracks();
-        videoTracks.forEach(track => {
-          track.stop();
-        });
-        video.srcObject = null;
-      }, 400);
+      
+      // draw the captured video image on the canvas
+      context.drawImage(video, 0, 0);
+    
+      // create an Image object for the PNG overlay
+      const overlay = new Image();
+      overlay.crossOrigin = "anonymous";
+      overlay.src = '/wp-content/uploads/2023/03/@OneUnderGlasgow.png';
+    
+      // draw the PNG overlay on top of the captured image
+      overlay.onload = function() {
+        context.drawImage(overlay, 0, 0, canvas.width, canvas.height);
+        
+        // create a download link for the final image
+        const link = document.createElement('a');
+        link.download = 'download.png';
+        link.href = canvas.toDataURL();
+        link.click();
+        link.delete;
+        
+        //   Stop the camera:
+        setTimeout(() => {
+          const videoTracks = video.srcObject.getTracks();
+          videoTracks.forEach(track => {
+            track.stop();
+          });
+          video.srcObject = null;
+        }, 400);
+      };
     };
     
   }

@@ -52,6 +52,21 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
         margin: 20px auto;
         text-align: center;
 
+        .selfie-overlay {
+            background-image: url(/wp-content/uploads/2023/03/@OneUnderGlasgow.png);
+            background-size: 100% 100%;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            display: none;
+            &.visible {
+                display: block;
+            }
+        }
+
         .take-picture__canvas {
             width: 100%;
             height: 100%;
@@ -94,14 +109,14 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
             cursor: pointer;
             display: none;
             position: absolute;
-            bottom: 20px;
+            bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
             &.visible {
               display: block;
             }
             &.take-picture__restart-camera.visible {
-                bottom: 70px;
+                bottom: 90px;
             }
         }
 
@@ -109,7 +124,7 @@ body.page-template-scorecard, body.page-template-results, body.page-template-sel
             display: none;
             z-index: 1;
             position: absolute;
-            bottom: 80px;
+            bottom: 100px;
             left: 50%;
             transform: translateX(-50%);
             color: white;

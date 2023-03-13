@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
 <section id="scorecard-section">
-    <div class="header-logo"><img src="<?php echo plugin_dir_url(dirname(__FILE__)) . 'src/images/One-Under-Logo.png' ?>"></div>
+    <!-- <div class="header-logo"><img src="<?php echo plugin_dir_url(dirname(__FILE__)) . 'src/images/One-Under-Logo.png' ?>"></div> -->
 
     <section class="take-picture">
         <div class="take-picture__mask">
+            <div class="selfie-overlay visible"></div>
             <canvas id="canvas" class="take-picture__canvas"></canvas>
-
             <video playsinline class="take-picture__video" autoplay></video>
         </div>
         <button class="take-picture__start-camera button visible">
