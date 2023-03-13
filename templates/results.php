@@ -28,8 +28,18 @@
         usort($obj->data, function ($a, $b) {
             return $a->score < $b->score ? -1 : 1;
         });
+
+        $getTopScore = $obj->data[0]->score;
+        $topScoreNames = array();
+        foreach ($obj->data as $item) {
+            if ($item->score == $getTopScore) {
+                $topScoreNames[] = $item->name;
+            }
+        }
     ?>
-        <p class="winner-message">Congrats <span><?php echo $obj->data[0]->name ?></span> you’re the winner! Keep the fun going and stick around to enjoy our bar, pool table, dance mats, and indoor car racing.</p>
+        <p class="winner-message">Congrats <span><?php foreach ($topScoreNames as $topScoreName) {
+                                                        echo $topScoreName . ", ";
+                                                    } ?></span> you’re the winner! Keep the fun going and stick around to enjoy our bar, pool table, dance mats, and indoor car racing.</p>
         <div class="results-container">
             <?php
             $i = 0;
