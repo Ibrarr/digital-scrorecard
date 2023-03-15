@@ -36,20 +36,49 @@
                 $topScoreNames[] = $item->name;
             }
         }
+
+        $playerOneScore   = $obj->data[0]->score;
+        $playerTwoScore   = $obj->data[1]->score;
+        $playerThreeScore = $obj->data[2]->score;
+        $playerFourScore  = $obj->data[3]->score;
+        $playerFiveScore  = $obj->data[4]->score;
+
+        function ordinal($number)
+        {
+            $ends = array('th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th');
+            if ((($number % 100) >= 11) && (($number % 100) <= 13))
+                return $number . 'th';
+            else
+                return $number . $ends[$number % 10];
+        }
+
     ?>
-        <p class="winner-message">Congrats <span><?php foreach ($topScoreNames as $topScoreName) {
-                                                        echo $topScoreName . ", ";
-                                                    } ?></span> you’re the winner! Keep the fun going and stick around to enjoy our bar, pool table, dance mats, and indoor car racing.</p>
+        <p class="winner-message">Congrats <span>
+                <?php foreach ($topScoreNames as $topScoreName) {
+                    echo $topScoreName . ", ";
+                } ?>
+            </span> you’re the
+            <?php if (count($topScoreNames) > 1) {
+                echo 'winners! ';
+            } else {
+                echo 'winner! ';
+            } ?>
+            Keep the fun going and stick around to enjoy our bar, pool table, dance mats, and indoor car racing.</p>
         <div class="results-container">
             <?php
             $i = 0;
+            $rank = 1;
             foreach ($obj->data as $player) {
+                if ($i > 0 && $player->score != $obj->data[$i - 1]->score) {
+                    $rank++;
+                }
+                $player->rank = $rank;
                 $i++;
                 if ($i == 1) {
             ?>
                     <div class="single-winner">
                         <div class="winner-position">
-                            <p>1st</p>
+                            <p><?php echo ordinal($player->rank); ?></p>
                         </div>
                         <div class="winner-info">
                             <span>
@@ -63,7 +92,7 @@
                 ?>
                     <div class="single-winner">
                         <div class="winner-position">
-                            <p>2nd</p>
+                            <p><?php echo ordinal($player->rank); ?></p>
                         </div>
                         <div class="winner-info">
                             <span>
@@ -77,7 +106,7 @@
                 ?>
                     <div class="single-winner">
                         <div class="winner-position">
-                            <p>3rd</p>
+                            <p><?php echo ordinal($player->rank); ?></p>
                         </div>
                         <div class="winner-info">
                             <span>
@@ -91,7 +120,7 @@
                 ?>
                     <div class="single-winner">
                         <div class="winner-position">
-                            <p>4th</p>
+                            <p><?php echo ordinal($player->rank); ?></p>
                         </div>
                         <div class="winner-info">
                             <span>
@@ -105,7 +134,7 @@
                 ?>
                     <div class="single-winner">
                         <div class="winner-position">
-                            <p>5th</p>
+                            <p><?php echo ordinal($player->rank); ?></p>
                         </div>
                         <div class="winner-info">
                             <span>
