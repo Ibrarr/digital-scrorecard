@@ -129,7 +129,7 @@ var appHeight = function appHeight() {
 };
 window.addEventListener('resize', appHeight);
 appHeight();
-$(document).ready(function () {
+jQuery(document).ready(function ($) {
   document.getElementsByTagName("html")[0].style.visibility = "visible";
 });
 $(function () {
