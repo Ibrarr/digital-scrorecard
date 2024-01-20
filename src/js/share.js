@@ -1,4 +1,4 @@
-$(function(){
+jQuery(document).ready(function ($) {
     if($('body').is('.page-template-results')){
         let userAgent = window.navigator.userAgent.toLowerCase(),
         macosPlatforms = /(macintosh|macintel|macppc|mac68k|macos)/i,

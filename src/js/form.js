@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
     document.getElementsByTagName("html")[0].style.visibility = "visible";
 });
 
-$(function(){
+jQuery(document).ready(function ($) {
     if($('body').is('.page-template-scorecard')){
 
         let currentTab = 0;

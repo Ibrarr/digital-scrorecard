@@ -7,7 +7,7 @@
   \*****************************/
 /***/ (() => {
 
-$(function () {
+jQuery(document).ready(function ($) {
   if ($('body').is('.page-template-scorecard')) {
     $(document).ready(function () {
       $(".accordion").on("click", ".heading", function () {
@@ -27,7 +27,7 @@ $(function () {
   \****************************/
 /***/ (() => {
 
-$(function () {
+jQuery(document).ready(function ($) {
   if ($('body').is('.page-template-scorecard')) {
     var closeAllSelect = function closeAllSelect(elmnt) {
       /*a function that will close all select boxes in the document,
@@ -132,7 +132,7 @@ appHeight();
 jQuery(document).ready(function ($) {
   document.getElementsByTagName("html")[0].style.visibility = "visible";
 });
-$(function () {
+jQuery(document).ready(function ($) {
   if ($('body').is('.page-template-scorecard')) {
     var showTab = function showTab(n) {
       // This function will display the specified tab of the form...
@@ -407,7 +407,7 @@ $(function () {
   \*****************************/
 /***/ (() => {
 
-$(function () {
+jQuery(document).ready(function ($) {
   if ($('body').is('.page-template-scorecard')) {
     $(document).ready(function () {
       $(document).on('click', '.minus', function () {
@@ -438,7 +438,7 @@ $(function () {
   \**************************/
 /***/ (() => {
 
-$(function () {
+jQuery(document).ready(function ($) {
   if ($('body').is('.page-template-selfie')) {
     var self = this;
     var cameraButton = document.querySelector(".take-picture__start-camera");
@@ -549,7 +549,7 @@ $(function () {
   \*************************/
 /***/ (() => {
 
-$(function () {
+jQuery(document).ready(function ($) {
   if ($('body').is('.page-template-results')) {
     var checkRadios = function checkRadios() {
       if (radio1.checked || radio2.checked) {
@@ -597,7 +597,7 @@ $(function () {
   \**************************/
 /***/ (() => {
 
-$(function () {
+jQuery(document).ready(function ($) {
   if ($('body').is('.page-template-scorecard')) {
     var slider = document.getElementById("numPlayers");
     var output = document.getElementById("totalNumPlayers");

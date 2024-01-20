@@ -1,4 +1,4 @@
-$(function(){
+jQuery(document).ready(function ($) {
   if($('body').is('.page-template-selfie')){
     const self = this;
     const cameraButton = document.querySelector(".take-picture__start-camera");

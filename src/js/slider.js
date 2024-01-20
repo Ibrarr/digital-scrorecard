@@ -1,4 +1,4 @@
-$(function(){
+jQuery(document).ready(function ($) {
   if($('body').is('.page-template-scorecard')){
     var slider = document.getElementById("numPlayers");
     var output = document.getElementById("totalNumPlayers");

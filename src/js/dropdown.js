@@ -1,4 +1,4 @@
-$(function(){
+jQuery(document).ready(function ($) {
   if($('body').is('.page-template-scorecard')){
     var x, i, j, l, ll, selElmnt, a, b, c;
     /*look for any elements with the class "custom-select":*/

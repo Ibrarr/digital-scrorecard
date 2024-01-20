@@ -1,4 +1,4 @@
-$(function(){
+jQuery(document).ready(function ($) {
     if($('body').is('.page-template-scorecard')){
         $(document).ready(function() {
             $(document).on('click', '.minus', function(){
